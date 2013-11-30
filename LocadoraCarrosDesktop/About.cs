@@ -12,9 +12,6 @@ namespace LocadoraCarrosDesktop
 {
     public partial class About : Form
     {
-
-        Form1 form1;
-
         public About()
         {
             InitializeComponent();
