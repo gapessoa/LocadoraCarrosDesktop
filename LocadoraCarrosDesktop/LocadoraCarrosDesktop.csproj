@@ -70,6 +70,12 @@
     </Compile>
     <Compile Include="Classes\DataReaderExtensions.cs" />
     <Compile Include="Classes\theConn.cs" />
+    <Compile Include="CadastrarCondutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastrarCondutor.Designer.cs">
+      <DependentUpon>CadastrarCondutor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CadastrarVeiculo.resx">
       <DependentUpon>CadastrarVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastrarCondutor.resx">
+      <DependentUpon>CadastrarCondutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

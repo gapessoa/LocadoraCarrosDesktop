@@ -76,5 +76,17 @@ namespace LocadoraCarrosDesktop
             CadastrarMarca cadastrarForm = new CadastrarMarca();
             cadastrarForm.ShowDialog();
         }
+
+        private void cadastrarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            CadastrarVeiculo cadastrarForm = new CadastrarVeiculo();
+            cadastrarForm.ShowDialog();
+        }
+
+        private void cadastrarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            CadastrarCondutor cadastrarForm = new CadastrarCondutor();
+            cadastrarForm.ShowDialog();
+        }
     }
 }
