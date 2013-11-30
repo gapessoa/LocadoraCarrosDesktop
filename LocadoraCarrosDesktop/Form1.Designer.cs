@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,33 +46,14 @@
             this.listarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rgDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cnhregistroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cnhdataexpedicaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cnhdataprimeirahabilitacaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cnhvencimentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.logradouroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bairroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cepDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.complementoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.condutoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.locadoraDataSet = new LocadoraCarrosDesktop.locadoraDataSet();
             this.condutoresTableAdapter = new LocadoraCarrosDesktop.locadoraDataSetTableAdapters.condutoresTableAdapter();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.condutoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.locadoraDataSet)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -147,13 +127,13 @@
             // listarToolStripMenuItem2
             // 
             this.listarToolStripMenuItem2.Name = "listarToolStripMenuItem2";
-            this.listarToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.listarToolStripMenuItem2.Size = new System.Drawing.Size(124, 22);
             this.listarToolStripMenuItem2.Text = "Listar";
             // 
             // cadastrarToolStripMenuItem2
             // 
             this.cadastrarToolStripMenuItem2.Name = "cadastrarToolStripMenuItem2";
-            this.cadastrarToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.cadastrarToolStripMenuItem2.Size = new System.Drawing.Size(124, 22);
             this.cadastrarToolStripMenuItem2.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem2.Click += new System.EventHandler(this.cadastrarToolStripMenuItem2_Click);
             // 
@@ -208,136 +188,6 @@
             this.sobreToolStripMenuItem.Text = "Sobre";
             this.sobreToolStripMenuItem.Click += new System.EventHandler(this.sobreToolStripMenuItem_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.Editar,
-            this.nomeDataGridViewTextBoxColumn,
-            this.cpfDataGridViewTextBoxColumn,
-            this.rgDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.cnhregistroDataGridViewTextBoxColumn,
-            this.cnhdataexpedicaoDataGridViewTextBoxColumn,
-            this.cnhdataprimeirahabilitacaoDataGridViewTextBoxColumn,
-            this.cnhvencimentoDataGridViewTextBoxColumn,
-            this.cidadeDataGridViewTextBoxColumn,
-            this.estadoDataGridViewTextBoxColumn,
-            this.logradouroDataGridViewTextBoxColumn,
-            this.bairroDataGridViewTextBoxColumn,
-            this.cepDataGridViewTextBoxColumn,
-            this.complementoDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.condutoresBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1234, 558);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // Editar
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Editar.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
-            this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Editar.Text = "Editar";
-            this.Editar.UseColumnTextForButtonValue = true;
-            this.Editar.Width = 70;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            // 
-            // cpfDataGridViewTextBoxColumn
-            // 
-            this.cpfDataGridViewTextBoxColumn.DataPropertyName = "cpf";
-            this.cpfDataGridViewTextBoxColumn.HeaderText = "cpf";
-            this.cpfDataGridViewTextBoxColumn.Name = "cpfDataGridViewTextBoxColumn";
-            // 
-            // rgDataGridViewTextBoxColumn
-            // 
-            this.rgDataGridViewTextBoxColumn.DataPropertyName = "rg";
-            this.rgDataGridViewTextBoxColumn.HeaderText = "rg";
-            this.rgDataGridViewTextBoxColumn.Name = "rgDataGridViewTextBoxColumn";
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            // 
-            // cnhregistroDataGridViewTextBoxColumn
-            // 
-            this.cnhregistroDataGridViewTextBoxColumn.DataPropertyName = "cnh_registro";
-            this.cnhregistroDataGridViewTextBoxColumn.HeaderText = "cnh_registro";
-            this.cnhregistroDataGridViewTextBoxColumn.Name = "cnhregistroDataGridViewTextBoxColumn";
-            // 
-            // cnhdataexpedicaoDataGridViewTextBoxColumn
-            // 
-            this.cnhdataexpedicaoDataGridViewTextBoxColumn.DataPropertyName = "cnh_data_expedicao";
-            this.cnhdataexpedicaoDataGridViewTextBoxColumn.HeaderText = "cnh_data_expedicao";
-            this.cnhdataexpedicaoDataGridViewTextBoxColumn.Name = "cnhdataexpedicaoDataGridViewTextBoxColumn";
-            // 
-            // cnhdataprimeirahabilitacaoDataGridViewTextBoxColumn
-            // 
-            this.cnhdataprimeirahabilitacaoDataGridViewTextBoxColumn.DataPropertyName = "cnh_data_primeira_habilitacao";
-            this.cnhdataprimeirahabilitacaoDataGridViewTextBoxColumn.HeaderText = "cnh_data_primeira_habilitacao";
-            this.cnhdataprimeirahabilitacaoDataGridViewTextBoxColumn.Name = "cnhdataprimeirahabilitacaoDataGridViewTextBoxColumn";
-            // 
-            // cnhvencimentoDataGridViewTextBoxColumn
-            // 
-            this.cnhvencimentoDataGridViewTextBoxColumn.DataPropertyName = "cnh_vencimento";
-            this.cnhvencimentoDataGridViewTextBoxColumn.HeaderText = "cnh_vencimento";
-            this.cnhvencimentoDataGridViewTextBoxColumn.Name = "cnhvencimentoDataGridViewTextBoxColumn";
-            // 
-            // cidadeDataGridViewTextBoxColumn
-            // 
-            this.cidadeDataGridViewTextBoxColumn.DataPropertyName = "cidade";
-            this.cidadeDataGridViewTextBoxColumn.HeaderText = "cidade";
-            this.cidadeDataGridViewTextBoxColumn.Name = "cidadeDataGridViewTextBoxColumn";
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            // 
-            // logradouroDataGridViewTextBoxColumn
-            // 
-            this.logradouroDataGridViewTextBoxColumn.DataPropertyName = "logradouro";
-            this.logradouroDataGridViewTextBoxColumn.HeaderText = "logradouro";
-            this.logradouroDataGridViewTextBoxColumn.Name = "logradouroDataGridViewTextBoxColumn";
-            // 
-            // bairroDataGridViewTextBoxColumn
-            // 
-            this.bairroDataGridViewTextBoxColumn.DataPropertyName = "bairro";
-            this.bairroDataGridViewTextBoxColumn.HeaderText = "bairro";
-            this.bairroDataGridViewTextBoxColumn.Name = "bairroDataGridViewTextBoxColumn";
-            // 
-            // cepDataGridViewTextBoxColumn
-            // 
-            this.cepDataGridViewTextBoxColumn.DataPropertyName = "cep";
-            this.cepDataGridViewTextBoxColumn.HeaderText = "cep";
-            this.cepDataGridViewTextBoxColumn.Name = "cepDataGridViewTextBoxColumn";
-            // 
-            // complementoDataGridViewTextBoxColumn
-            // 
-            this.complementoDataGridViewTextBoxColumn.DataPropertyName = "complemento";
-            this.complementoDataGridViewTextBoxColumn.HeaderText = "complemento";
-            this.complementoDataGridViewTextBoxColumn.Name = "complementoDataGridViewTextBoxColumn";
-            // 
             // condutoresBindingSource
             // 
             this.condutoresBindingSource.DataMember = "condutores";
@@ -366,7 +216,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Location = new System.Drawing.Point(12, 65);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1243, 576);
@@ -388,10 +237,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.condutoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.locadoraDataSet)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -416,27 +263,10 @@
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private locadoraDataSet locadoraDataSet;
         private System.Windows.Forms.BindingSource condutoresBindingSource;
         private locadoraDataSetTableAdapters.condutoresTableAdapter condutoresTableAdapter;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn Editar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cpfDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rgDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cnhregistroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cnhdataexpedicaoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cnhdataprimeirahabilitacaoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cnhvencimentoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cidadeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn logradouroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bairroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cepDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn complementoDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox1;
     }
 }
