@@ -15,56 +15,107 @@ namespace LocadoraCarrosDesktop
         public CadastrarCondutor()
         {
             InitializeComponent();
-
-            Dictionary<string, string> cb_data_marcas = new Dictionary<string, string>();
-            Dictionary<string, string> cb_data_combustiveis = new Dictionary<string, string>();
-
+            
             theConn conn = new theConn();
-            theConn conn2 = new theConn();
+            List<string> cb_estados = new List<string>();
 
-            var marcas = conn.Select("SELECT id,nome FROM veiculo_marcas");
+            var estados = conn.Select("SELECT uf FROM estados ORDER BY uf ASC");
 
-            foreach (var marca in marcas)
+            foreach (var estado in estados)
             {
-                cb_data_marcas.Add(marca["id"].ToString(), marca["nome"].ToString());
+                cb_estados.Add(estado["uf"].ToString());
             }
 
-            cbMarca.DataSource = new BindingSource(cb_data_marcas, null);
-            cbMarca.DisplayMember = "Value";
-            cbMarca.ValueMember = "Key";
+            cbEstado.DataSource = cb_estados;
 
-
-            var combustiveis = conn2.Select("SELECT id,nome FROM combustivel");
-
-            foreach (var combustivel in combustiveis)
-            {
-                cb_data_combustiveis.Add(combustivel["id"].ToString(), combustivel["nome"].ToString());
-            }
-
-            cbCombustivel.DataSource = new BindingSource(cb_data_combustiveis, null);
-            cbCombustivel.DisplayMember = "Value";
-            cbCombustivel.ValueMember = "Key";
+            cbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbCidade.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             theConn conn = new theConn();
 
             conn.InsertItem("nome", txtNome.Text);
-            conn.InsertItem("placa", txtPlaca.Text);
-            conn.InsertItem("chassi", txtChassi.Text);
-            conn.InsertItem("cor", txtCor.Text);
-            conn.InsertItem("modelo", txtModelo.Text);
-            conn.InsertItem("ano", txtAno.Text);
-            conn.InsertItem("km", txtKm.Text);
-            conn.InsertItem("tipo_combustivel", cbCombustivel.SelectedValue.ToString());
-            conn.InsertItem("marca_id", cbMarca.SelectedValue.ToString());
+            conn.InsertItem("cpf", txtCPF.Text);
+            conn.InsertItem("rg", txtRG.Text);
+            conn.InsertItem("email", txtEmail.Text);
+            conn.InsertItem("cnh_registro", txtCNHRegistro.Text);
+            conn.InsertItem("cnh_data_expedicao", Convert.ToDateTime(txtCNHExpedicao.Text).ToString("yyyy-MM-dd"));
+            conn.InsertItem("cnh_data_primeira_habilitacao", Convert.ToDateTime(txtCNHPrimeiraHabilitacao.Text).ToString("yyyy-MM-dd"));
+            conn.InsertItem("cnh_vencimento", Convert.ToDateTime(txtCNHVencimento.Text).ToString("yyyy-MM-dd"));
+            conn.InsertItem("cidade", cbCidade.SelectedValue.ToString());
+            conn.InsertItem("estado", cbEstado.SelectedValue.ToString());
+            conn.InsertItem("logradouro", txtLogradouro.Text);
+            conn.InsertItem("cep", txtCEP.Text);
+            conn.InsertItem("complemento", txtComplemento.Text);
+            conn.InsertItem("bairro", txtBairro.Text);
 
-            conn.Insert("veiculos");
+            conn.Insert("condutores");
 
-            MessageBox.Show("O veículo foi cadastrado com sucesso!");
-
+            MessageBox.Show("O condutor foi cadastrado com sucesso!");
+            
             this.Close();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtModelo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAno_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtKm_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void cbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var estado = cbEstado.SelectedValue.ToString();
+            
+            theConn conn2 = new theConn();
+
+            List<string> cb_cidades = new List<string>();
+
+            var cidades = conn2.Select("Select nome FROM cidades WHERE uf = '" + estado + "'"
+                );
+
+            foreach (var cidade in cidades)
+            {
+                cb_cidades.Add(cidade["nome"].ToString());
+            }
+
+            cbCidade.DataSource = cb_cidades;
         }
     }
 }
