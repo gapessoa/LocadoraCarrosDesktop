@@ -10,16 +10,30 @@ using System.Windows.Forms;
 
 namespace LocadoraCarrosDesktop
 {
-    public partial class CadastrarCondutor : Form
+    public partial class CadastrarLocatario : Form
     {
-        public CadastrarCondutor()
+        public CadastrarLocatario()
         {
             InitializeComponent();
-            
+
             theConn conn = new theConn();
+            theConn conn2 = new theConn();
+            Dictionary<string, string> cb_tipos = new Dictionary<string, string>();
+
+            var tipos = conn.Select("SELECT id, nome FROM tipo_pessoa");
+
+            foreach (var tipo in tipos)
+            {
+                cb_tipos.Add(tipo["id"].ToString(), tipo["nome"].ToString());
+            }
+
+            cbTipo.DataSource = new BindingSource(cb_tipos, null);
+            cbTipo.DisplayMember = "Value";
+            cbTipo.ValueMember = "Key";
+
             List<string> cb_estados = new List<string>();
 
-            var estados = conn.Select("SELECT uf FROM estados ORDER BY uf ASC");
+            var estados = conn2.Select("SELECT uf FROM estados ORDER BY uf ASC");
 
             foreach (var estado in estados)
             {
@@ -30,32 +44,41 @@ namespace LocadoraCarrosDesktop
 
             cbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCidade.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbTipo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             theConn conn = new theConn();
 
-            conn.InsertItem("nome", txtNome.Text);
-            conn.InsertItem("cpf", txtCPF.Text);
-            conn.InsertItem("rg", txtRG.Text);
+            var tipo = cbTipo.SelectedValue.ToString();
+
+            if (tipo == "0")
+            {
+                conn.InsertItem("cpf", txtCPF.Text);
+                conn.InsertItem("nome", txtNome.Text);
+                conn.InsertItem("rg", txtRG.Text);
+            }
+            else
+            {
+                conn.InsertItem("nome_fantasia", txtCPF.Text);
+                conn.InsertItem("cnpj", txtRG.Text);
+                conn.InsertItem("nome", txtNome.Text);
+            }
+
+            conn.InsertItem("tipo", tipo);
             conn.InsertItem("email", txtEmail.Text);
-            conn.InsertItem("cnh_registro", txtCNHRegistro.Text);
-            conn.InsertItem("cnh_data_expedicao", Convert.ToDateTime(txtCNHExpedicao.Text).ToString("yyyy-MM-dd"));
-            conn.InsertItem("cnh_data_primeira_habilitacao", Convert.ToDateTime(txtCNHPrimeiraHabilitacao.Text).ToString("yyyy-MM-dd"));
-            conn.InsertItem("cnh_vencimento", Convert.ToDateTime(txtCNHVencimento.Text).ToString("yyyy-MM-dd"));
-            conn.InsertItem("cidade", cbCidade.SelectedValue.ToString());
-            conn.InsertItem("estado", cbEstado.SelectedValue.ToString());
             conn.InsertItem("logradouro", txtLogradouro.Text);
-            conn.InsertItem("cep", txtCEP.Text);
             conn.InsertItem("complemento", txtComplemento.Text);
+            conn.InsertItem("estado", cbEstado.SelectedValue.ToString());
+            conn.InsertItem("cidade", cbCidade.SelectedValue.ToString());
             conn.InsertItem("bairro", txtBairro.Text);
+            conn.InsertItem("cep", txtCEP.Text);
 
-            conn.Insert("condutores");
+            conn.Insert("locatarios");
 
-            MessageBox.Show("O condutor foi cadastrado com sucesso!");
-            
+            MessageBox.Show("O locatário foi registrado com sucesso!");
+
             this.Close();
         }
 
@@ -102,7 +125,7 @@ namespace LocadoraCarrosDesktop
         private void cbEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
             var estado = cbEstado.SelectedValue.ToString();
-            
+
             theConn conn2 = new theConn();
 
             List<string> cb_cidades = new List<string>();
@@ -116,6 +139,29 @@ namespace LocadoraCarrosDesktop
             }
 
             cbCidade.DataSource = cb_cidades;
+        }
+
+        private void cbTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbTipo.SelectedValue.ToString() != "1")
+            {
+
+                lblNome.Text = "Nome";
+                lblCPF.Text = "CPF";
+                lblRG.Text = "RG";
+                txtCPF.MaxLength = 11;
+                txtRG.MaxLength = 12;
+            }
+            else
+            {
+                lblNome.Text = "Razão Social";
+                lblCPF.Text = "Nome Fantasia";
+                lblRG.Text = "CNPJ";
+                txtCPF.MaxLength = 255;
+                txtRG.MaxLength = 14;
+            }
+            txtRG.Clear();
+            txtCPF.Clear();
         }
     }
 }

@@ -16,11 +16,11 @@ namespace LocadoraCarrosDesktop
         public Form1()
         {
             InitializeComponent();
-            dataGridView1.Anchor =
-                AnchorStyles.Bottom |
-                AnchorStyles.Right |
-                AnchorStyles.Top |
-                AnchorStyles.Left;
+            //dataGridView1.Anchor =
+            //    AnchorStyles.Bottom |
+            //    AnchorStyles.Right |
+            //    AnchorStyles.Top |
+            //    AnchorStyles.Left;
 
             groupBox1.Anchor =
                                 AnchorStyles.Bottom |
@@ -67,13 +67,25 @@ namespace LocadoraCarrosDesktop
 
         private void cadastrarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            CadastrarVeiculo cadastrarForm = new CadastrarVeiculo();
+            CadastrarLocatario cadastrarForm = new CadastrarLocatario();
             cadastrarForm.ShowDialog();
         }
 
         private void cadastrarToolStripMenuItem4_Click(object sender, EventArgs e)
         {
             CadastrarMarca cadastrarForm = new CadastrarMarca();
+            cadastrarForm.ShowDialog();
+        }
+
+        private void cadastrarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            CadastrarVeiculo cadastrarForm = new CadastrarVeiculo();
+            cadastrarForm.ShowDialog();
+        }
+
+        private void cadastrarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            CadastrarCondutor cadastrarForm = new CadastrarCondutor();
             cadastrarForm.ShowDialog();
         }
     }
