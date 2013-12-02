@@ -64,8 +64,8 @@ namespace LocadoraCarrosDesktop
             txtCNHExpedicao.Text = Convert.ToDateTime(rows[0]["cnh_data_expedicao"]).ToString();
             txtCNHPrimeiraHabilitacao.Text = Convert.ToDateTime(rows[0]["cnh_data_primeira_habilitacao"]).ToString();
             txtCNHVencimento.Text = Convert.ToDateTime(rows[0]["cnh_vencimento"]).ToString();
-            cbCidade.SelectedItem = rows[0]["cidade"].ToString();
             cbEstado.SelectedItem = rows[0]["estado"].ToString();
+            cbCidade.SelectedItem = rows[0]["cidade"].ToString();
             txtLogradouro.Text = rows[0]["logradouro"].ToString();
             txtCEP.Text = rows[0]["cep"].ToString();
             txtComplemento.Text = rows[0]["complemento"].ToString();
