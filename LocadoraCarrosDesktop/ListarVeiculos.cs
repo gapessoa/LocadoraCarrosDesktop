@@ -16,11 +16,6 @@ namespace LocadoraCarrosDesktop
         public ListarVeiculos()
         {
             InitializeComponent();
-            //dataGridView1.Anchor =
-            //    AnchorStyles.Bottom |
-            //    AnchorStyles.Right |
-            //    AnchorStyles.Top |
-            //    AnchorStyles.Left;
 
             groupBox1.Anchor =
                                 AnchorStyles.Bottom |
@@ -33,7 +28,6 @@ namespace LocadoraCarrosDesktop
         {
             // TODO: This line of code loads data into the 'locadoraDataSet.veiculos' table. You can move, or remove it, as needed.
             this.veiculosTableAdapter.Fill(this.locadoraDataSet.veiculos);
-
         }
 
         private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,48 +36,54 @@ namespace LocadoraCarrosDesktop
             aboutForm.ShowDialog();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void toolStripButton1_Click_1(object sender, EventArgs e)
         {
+            this.veiculosTableAdapter.Fill(this.locadoraDataSet.veiculos);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var SelectedIndex = veiculosDataGridView.CurrentCell.RowIndex;
+            MessageBox.Show(SelectedIndex.ToString());
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            DialogResult response = MessageBox.Show("Você tem certeza que deseja deletar este registro?", "Deletar Registro?",
+                      MessageBoxButtons.OKCancel,
+                      MessageBoxIcon.Question,
+                      MessageBoxDefaultButton.Button2);
+
+            if (response != DialogResult.Cancel)
+            {
+
+                int rowindex = veiculosDataGridView.CurrentCell.RowIndex;
+
+                string id = veiculosDataGridView.Rows[rowindex].Cells[0].Value.ToString();
+
+                theConn conn = new theConn();
+
+                conn.Cmd("DELETE FROM veiculos WHERE id = '" + id + "'");
+
+                veiculosDataGridView.Rows.RemoveAt(rowindex);
+            }
 
         }
 
-        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void toolStripButton3_Click(object sender, EventArgs e)
         {
+            int rowindex = veiculosDataGridView.CurrentCell.RowIndex;
+            
+            string id = veiculosDataGridView.Rows[rowindex].Cells[0].Value.ToString();
 
-        }
-
-        private void cadastrarToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            CadastrarLocatario cadastrarForm = new CadastrarLocatario();
-            cadastrarForm.ShowDialog();
-        }
-
-        private void cadastrarToolStripMenuItem4_Click(object sender, EventArgs e)
-        {
-            CadastrarMarca cadastrarForm = new CadastrarMarca();
-            cadastrarForm.ShowDialog();
-        }
-
-        private void cadastrarToolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-            CadastrarVeiculo cadastrarForm = new CadastrarVeiculo();
-            cadastrarForm.ShowDialog();
-        }
-
-        private void cadastrarToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            CadastrarCondutor cadastrarForm = new CadastrarCondutor();
-            cadastrarForm.ShowDialog();
-        }
-
-
-        private void listarToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            Form1 form = new Form1();
+            CadastrarVeiculo form = new CadastrarVeiculo(id);
             form.Show();
-            this.Hide();
         }
 
-
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            CadastrarVeiculo form = new CadastrarVeiculo();
+            form.ShowDialog();
+        }
     }
 }

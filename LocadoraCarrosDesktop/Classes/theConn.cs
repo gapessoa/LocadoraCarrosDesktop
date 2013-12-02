@@ -77,7 +77,7 @@ namespace LocadoraCarrosDesktop
             this.Cmd(command);
         }
 
-        public void Update(string table, string where)
+        public void Update(string table, string row, string value)
         {
             string keys_values = "";
             int i = this.insertItens.Count - 1;
@@ -86,7 +86,7 @@ namespace LocadoraCarrosDesktop
             {
                 if (i == 0)
                 {
-                    keys_values += item.Key + " = '" + item.Value;
+                    keys_values += item.Key + " = '" + item.Value + "'";
                 }
                 else
                 {
@@ -95,10 +95,12 @@ namespace LocadoraCarrosDesktop
                 i--;
             }
 
-            if (where.Length > 0)
-                where = " WHERE " + where;
+            
+            var where = " WHERE " + row + " = " + value;
 
             var command = "UPDATE " + table + " SET " + keys_values + where;
+
+            this.Cmd(command);
         }
 
         private void execute(MySqlCommand command)
