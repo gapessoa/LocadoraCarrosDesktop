@@ -164,6 +164,7 @@
             this.tableAdapterManager.condutoresTableAdapter = null;
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.UpdateOrder = LocadoraCarrosDesktop.locadoraDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.veiculo_marcasTableAdapter = null;
             // 
             // locatariosTableAdapter
             // 
@@ -303,7 +304,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox1);
             this.Name = "ListarLocatarios";
-            this.Text = "Listar Locatários";
+            this.Text = "Listagem de Locatários";
             this.Load += new System.EventHandler(this.ListarLocatarios_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.locatariosDataGridView)).EndInit();
