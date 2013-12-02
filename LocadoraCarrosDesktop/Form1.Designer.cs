@@ -142,13 +142,13 @@
             // listarToolStripMenuItem3
             // 
             this.listarToolStripMenuItem3.Name = "listarToolStripMenuItem3";
-            this.listarToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.listarToolStripMenuItem3.Size = new System.Drawing.Size(124, 22);
             this.listarToolStripMenuItem3.Text = "Listar";
             // 
             // cadastrarToolStripMenuItem3
             // 
             this.cadastrarToolStripMenuItem3.Name = "cadastrarToolStripMenuItem3";
-            this.cadastrarToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.cadastrarToolStripMenuItem3.Size = new System.Drawing.Size(124, 22);
             this.cadastrarToolStripMenuItem3.Text = "Cadastrar";
             // 
             // marcasToolStripMenuItem
@@ -163,14 +163,14 @@
             // listarToolStripMenuItem4
             // 
             this.listarToolStripMenuItem4.Name = "listarToolStripMenuItem4";
-            this.listarToolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
+            this.listarToolStripMenuItem4.Size = new System.Drawing.Size(124, 22);
             this.listarToolStripMenuItem4.Text = "Listar";
             this.listarToolStripMenuItem4.Click += new System.EventHandler(this.listarToolStripMenuItem4_Click);
             // 
             // cadastrarToolStripMenuItem4
             // 
             this.cadastrarToolStripMenuItem4.Name = "cadastrarToolStripMenuItem4";
-            this.cadastrarToolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
+            this.cadastrarToolStripMenuItem4.Size = new System.Drawing.Size(124, 22);
             this.cadastrarToolStripMenuItem4.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem4.Click += new System.EventHandler(this.cadastrarToolStripMenuItem4_Click);
             // 
@@ -191,7 +191,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "LocCar V.0.0.1";
+            this.Text = "LocCar V.1.5.3";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
