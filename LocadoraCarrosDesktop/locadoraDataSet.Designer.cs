@@ -915,6 +915,20 @@ namespace LocadoraCarrosDesktop {
             
             private global::System.Data.DataColumn columnTipo;
             
+            private global::System.Data.DataColumn columnrg;
+            
+            private global::System.Data.DataColumn columnemail;
+            
+            private global::System.Data.DataColumn columnlogradouro;
+            
+            private global::System.Data.DataColumn columnbairro;
+            
+            private global::System.Data.DataColumn columncep;
+            
+            private global::System.Data.DataColumn columncomplemento;
+            
+            private global::System.Data.DataColumn columnnome_fantasia;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public locatariosDataTable() {
@@ -1006,6 +1020,62 @@ namespace LocadoraCarrosDesktop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn rgColumn {
+                get {
+                    return this.columnrg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn emailColumn {
+                get {
+                    return this.columnemail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn logradouroColumn {
+                get {
+                    return this.columnlogradouro;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn bairroColumn {
+                get {
+                    return this.columnbairro;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cepColumn {
+                get {
+                    return this.columncep;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn complementoColumn {
+                get {
+                    return this.columncomplemento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nome_fantasiaColumn {
+                get {
+                    return this.columnnome_fantasia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1041,7 +1111,7 @@ namespace LocadoraCarrosDesktop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public locatariosRow AddlocatariosRow(string nome, string cpf, string cidade, string estado, string cnpj, string Tipo) {
+            public locatariosRow AddlocatariosRow(string nome, string cpf, string cidade, string estado, string cnpj, string Tipo, string rg, string email, string logradouro, string bairro, string cep, string complemento, string nome_fantasia) {
                 locatariosRow rowlocatariosRow = ((locatariosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1050,7 +1120,14 @@ namespace LocadoraCarrosDesktop {
                         cidade,
                         estado,
                         cnpj,
-                        Tipo};
+                        Tipo,
+                        rg,
+                        email,
+                        logradouro,
+                        bairro,
+                        cep,
+                        complemento,
+                        nome_fantasia};
                 rowlocatariosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowlocatariosRow);
                 return rowlocatariosRow;
@@ -1087,6 +1164,13 @@ namespace LocadoraCarrosDesktop {
                 this.columnestado = base.Columns["estado"];
                 this.columncnpj = base.Columns["cnpj"];
                 this.columnTipo = base.Columns["Tipo"];
+                this.columnrg = base.Columns["rg"];
+                this.columnemail = base.Columns["email"];
+                this.columnlogradouro = base.Columns["logradouro"];
+                this.columnbairro = base.Columns["bairro"];
+                this.columncep = base.Columns["cep"];
+                this.columncomplemento = base.Columns["complemento"];
+                this.columnnome_fantasia = base.Columns["nome_fantasia"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1106,6 +1190,20 @@ namespace LocadoraCarrosDesktop {
                 base.Columns.Add(this.columncnpj);
                 this.columnTipo = new global::System.Data.DataColumn("Tipo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTipo);
+                this.columnrg = new global::System.Data.DataColumn("rg", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrg);
+                this.columnemail = new global::System.Data.DataColumn("email", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnemail);
+                this.columnlogradouro = new global::System.Data.DataColumn("logradouro", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlogradouro);
+                this.columnbairro = new global::System.Data.DataColumn("bairro", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbairro);
+                this.columncep = new global::System.Data.DataColumn("cep", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncep);
+                this.columncomplemento = new global::System.Data.DataColumn("complemento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncomplemento);
+                this.columnnome_fantasia = new global::System.Data.DataColumn("nome_fantasia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnome_fantasia);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -1122,6 +1220,18 @@ namespace LocadoraCarrosDesktop {
                 this.columnestado.MaxLength = 2;
                 this.columncnpj.MaxLength = 14;
                 this.columnTipo.MaxLength = 50;
+                this.columnrg.MaxLength = 12;
+                this.columnemail.AllowDBNull = false;
+                this.columnemail.MaxLength = 255;
+                this.columnlogradouro.AllowDBNull = false;
+                this.columnlogradouro.MaxLength = 255;
+                this.columnbairro.AllowDBNull = false;
+                this.columnbairro.MaxLength = 255;
+                this.columncep.AllowDBNull = false;
+                this.columncep.MaxLength = 9;
+                this.columncomplemento.AllowDBNull = false;
+                this.columncomplemento.MaxLength = 255;
+                this.columnnome_fantasia.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2543,6 +2653,93 @@ namespace LocadoraCarrosDesktop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string rg {
+                get {
+                    try {
+                        return ((string)(this[this.tablelocatarios.rgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'rg\' in table \'locatarios\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelocatarios.rgColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string email {
+                get {
+                    return ((string)(this[this.tablelocatarios.emailColumn]));
+                }
+                set {
+                    this[this.tablelocatarios.emailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string logradouro {
+                get {
+                    return ((string)(this[this.tablelocatarios.logradouroColumn]));
+                }
+                set {
+                    this[this.tablelocatarios.logradouroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string bairro {
+                get {
+                    return ((string)(this[this.tablelocatarios.bairroColumn]));
+                }
+                set {
+                    this[this.tablelocatarios.bairroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cep {
+                get {
+                    return ((string)(this[this.tablelocatarios.cepColumn]));
+                }
+                set {
+                    this[this.tablelocatarios.cepColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string complemento {
+                get {
+                    return ((string)(this[this.tablelocatarios.complementoColumn]));
+                }
+                set {
+                    this[this.tablelocatarios.complementoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nome_fantasia {
+                get {
+                    try {
+                        return ((string)(this[this.tablelocatarios.nome_fantasiaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'nome_fantasia\' in table \'locatarios\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelocatarios.nome_fantasiaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IscpfNull() {
                 return this.IsNull(this.tablelocatarios.cpfColumn);
             }
@@ -2575,6 +2772,30 @@ namespace LocadoraCarrosDesktop {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTipoNull() {
                 this[this.tablelocatarios.TipoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsrgNull() {
+                return this.IsNull(this.tablelocatarios.rgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetrgNull() {
+                this[this.tablelocatarios.rgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isnome_fantasiaNull() {
+                return this.IsNull(this.tablelocatarios.nome_fantasiaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setnome_fantasiaNull() {
+                this[this.tablelocatarios.nome_fantasiaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4019,6 +4240,13 @@ condutores";
             tableMapping.ColumnMappings.Add("estado", "estado");
             tableMapping.ColumnMappings.Add("cnpj", "cnpj");
             tableMapping.ColumnMappings.Add("Tipo", "Tipo");
+            tableMapping.ColumnMappings.Add("rg", "rg");
+            tableMapping.ColumnMappings.Add("email", "email");
+            tableMapping.ColumnMappings.Add("logradouro", "logradouro");
+            tableMapping.ColumnMappings.Add("bairro", "bairro");
+            tableMapping.ColumnMappings.Add("cep", "cep");
+            tableMapping.ColumnMappings.Add("complemento", "complemento");
+            tableMapping.ColumnMappings.Add("nome_fantasia", "nome_fantasia");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -4035,9 +4263,26 @@ condutores";
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT locatarios.id as id,locatarios.nome as nome, cpf, cnpj, cidade, estado, ti" +
-                "po_pessoa.nome as Tipo FROM locatarios LEFT JOIN tipo_pessoa ON (locatarios.tipo" +
-                " = tipo_pessoa.id)";
+            this._commandCollection[0].CommandText = @"SELECT
+locatarios.id,
+locatarios.nome,
+locatarios.cpf,
+locatarios.rg,
+locatarios.email,
+locatarios.cidade,
+locatarios.estado,
+locatarios.logradouro,
+locatarios.bairro,
+locatarios.cep,
+locatarios.complemento,
+locatarios.cnpj,
+locatarios.nome_fantasia,
+tipo_pessoa.nome as Tipo
+FROM
+locatarios
+LEFT JOIN
+tipo_pessoa
+ON (tipo_pessoa.id = locatarios.tipo) ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

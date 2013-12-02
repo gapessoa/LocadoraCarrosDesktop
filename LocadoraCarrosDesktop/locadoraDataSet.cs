@@ -10,3 +10,4 @@ namespace LocadoraCarrosDesktop {
     public partial class locadoraDataSet {
     }
 }
+
