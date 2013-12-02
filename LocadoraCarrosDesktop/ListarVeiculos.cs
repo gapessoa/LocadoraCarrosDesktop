@@ -77,7 +77,7 @@ namespace LocadoraCarrosDesktop
             string id = veiculosDataGridView.Rows[rowindex].Cells[0].Value.ToString();
 
             CadastrarVeiculo form = new CadastrarVeiculo(id);
-            form.Show();
+            form.ShowDialog();
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
