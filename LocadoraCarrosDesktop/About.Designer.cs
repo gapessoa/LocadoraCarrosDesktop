@@ -99,7 +99,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(224, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "CarLoc V0.0.1";
+            this.label1.Text = "LocCar V2.5.3";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // cmdAction
