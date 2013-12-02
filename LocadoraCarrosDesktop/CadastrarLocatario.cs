@@ -14,10 +14,16 @@ namespace LocadoraCarrosDesktop
     {
         private string id;
         private bool update_mode = false;
+        private bool clear_inputs = true;
 
         public CadastrarLocatario(string id = "vazio")
         {
             this.id = id;
+
+            if (this.id != "vazio")
+            {
+                this.clear_inputs = false;
+            }
 
             InitializeComponent();
 
@@ -72,8 +78,24 @@ namespace LocadoraCarrosDesktop
 
             var rows = conn.Select("SELECT * FROM locatarios WHERE id = '" + this.id + "'");
 
+            var tipo = rows[0]["tipo"].ToString();
+
+            string cbtipoSelectedValue = "vazio";
+
+            if (tipo == "True")
+            {
+                cbtipoSelectedValue = "1";
+                txtCPF.Text = rows[0]["nome_fantasia"].ToString();
+                txtRG.Text = rows[0]["cnpj"].ToString();
+            }
+            else
+            {
+                cbtipoSelectedValue = "0";
+                txtCPF.Text = rows[0]["cpf"].ToString();
+                txtRG.Text = rows[0]["rg"].ToString();
+            }
             txtNome.Text = rows[0]["nome"].ToString();
-            txtCPF.Text = rows[0]["cpf"].ToString();
+            cbTipo.SelectedValue = cbtipoSelectedValue;
             txtEmail.Text = rows[0]["email"].ToString();
             cbEstado.SelectedItem = rows[0]["estado"].ToString();
             cbCidade.SelectedItem = rows[0]["cidade"].ToString();
@@ -81,6 +103,8 @@ namespace LocadoraCarrosDesktop
             txtCEP.Text = rows[0]["cep"].ToString();
             txtComplemento.Text = rows[0]["complemento"].ToString();
             txtBairro.Text = rows[0]["bairro"].ToString();
+
+            this.clear_inputs = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -208,8 +232,11 @@ namespace LocadoraCarrosDesktop
                 txtCPF.MaxLength = 255;
                 txtRG.MaxLength = 14;
             }
-            txtRG.Clear();
-            txtCPF.Clear();
+            if (this.clear_inputs)
+            {
+                txtRG.Clear();
+                txtCPF.Clear();
+            }
         }
     }
 }

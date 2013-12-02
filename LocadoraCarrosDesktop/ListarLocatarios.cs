@@ -121,5 +121,50 @@ namespace LocadoraCarrosDesktop
             }
         }
 
+        private void toolStripButton1_Click_1(object sender, EventArgs e)
+        {
+            CadastrarLocatario form = new CadastrarLocatario();
+
+            form.ShowDialog();
+        }
+
+        private void toolStripButton2_Click_1(object sender, EventArgs e)
+        {
+            int rowindex = locatariosDataGridView.CurrentCell.RowIndex;
+
+            string id = locatariosDataGridView.Rows[rowindex].Cells[0].Value.ToString();
+
+            CadastrarLocatario form = new CadastrarLocatario(id);
+            form.ShowDialog();
+        }
+
+        private void toolStripButton3_Click_1(object sender, EventArgs e)
+        {
+            DialogResult response = MessageBox.Show("Você tem certeza que deseja deletar este registro?", "Deletar Registro?",
+                MessageBoxButtons.OKCancel,
+                 MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+
+            if (response != DialogResult.Cancel)
+            {
+
+                int rowindex = locatariosDataGridView.CurrentCell.RowIndex;
+
+                string id = locatariosDataGridView.Rows[rowindex].Cells[0].Value.ToString();
+
+                theConn conn = new theConn();
+
+                conn.Cmd("DELETE FROM locatarios WHERE id = '" + id + "'");
+
+                locatariosDataGridView.Rows.RemoveAt(rowindex);
+            }
+        }
+
+        private void toolStripButton4_Click_1(object sender, EventArgs e)
+        {
+            this.locatariosTableAdapter.Fill(this.locadoraDataSet.locatarios);
+        }
+
+
     }
 }
