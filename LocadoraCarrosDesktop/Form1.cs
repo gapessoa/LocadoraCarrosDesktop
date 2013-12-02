@@ -42,7 +42,8 @@ namespace LocadoraCarrosDesktop
 
         private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            CadastrarLocacao form = new CadastrarLocacao();
+            form.ShowDialog();
         }
 
         private void cadastrarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -107,6 +108,12 @@ namespace LocadoraCarrosDesktop
         private void cadastrarToolStripMenuItem2_Click_1(object sender, EventArgs e)
         {
             CadastrarCondutor form = new CadastrarCondutor();
+            form.ShowDialog();
+        }
+
+        private void listarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListarLocacoes form = new ListarLocacoes();
             form.ShowDialog();
         }
 
