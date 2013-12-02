@@ -91,5 +91,10 @@ namespace LocadoraCarrosDesktop
 
         }
 
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            this.veiculo_marcasTableAdapter.Fill(this.locadoraDataSet.veiculo_marcas);
+        }
+
     }
 }
