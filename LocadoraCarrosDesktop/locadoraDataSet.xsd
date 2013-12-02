@@ -285,6 +285,65 @@ ON (tipo_pessoa.id = locatarios.tipo) </CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="locacoesTableAdapter" GeneratorDataComponentClassName="locacoesTableAdapter" Name="locacoes" UserDataComponentName="locacoesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="locadoraConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT
+locacoes.id,
+DATE_FORMAT(locacoes.data_reserva, '%d/%c/%Y') as data_reserva,
+tipo_locacao.nome as tipo_locacao,
+locacoes.franquia_dia,
+locacoes.diarias_previstas,
+locacoes.destino,
+DATE_FORMAT(locacoes.data_saida, '%d/%c/%Y') as data_saida, 
+locacoes.km_saida,
+DATE_FORMAT(locacoes.data_contrato, '%d/%c/%Y') as data_contrato, 
+condutores.nome as condutor_nome,
+locatarios.nome as locatario_nome,
+veiculos.nome as veiculo_nome,
+locacoes.dt_devolucao,
+locacoes.km_devolucao,
+locacoes.valor_pago
+FROM
+locacoes
+LEFT JOIN
+locatarios 
+ON (locatarios.id = locacoes.locatario_id)
+LEFT JOIN
+veiculos 
+ON (veiculos.id = locacoes.veiculo_id)
+LEFT JOIN 
+condutores
+ON (condutores.id = locacoes.condutor_id)
+LEFT JOIN
+tipo_locacao
+ON (locacoes.tipo_locacao = tipo_locacao.id)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="franquia_dia" DataSetColumn="franquia_dia" />
+              <Mapping SourceColumn="diarias_previstas" DataSetColumn="diarias_previstas" />
+              <Mapping SourceColumn="destino" DataSetColumn="destino" />
+              <Mapping SourceColumn="km_saida" DataSetColumn="km_saida" />
+              <Mapping SourceColumn="condutor_nome" DataSetColumn="condutor_nome" />
+              <Mapping SourceColumn="locatario_nome" DataSetColumn="locatario_nome" />
+              <Mapping SourceColumn="veiculo_nome" DataSetColumn="veiculo_nome" />
+              <Mapping SourceColumn="data_reserva" DataSetColumn="data_reserva" />
+              <Mapping SourceColumn="data_saida" DataSetColumn="data_saida" />
+              <Mapping SourceColumn="data_contrato" DataSetColumn="data_contrato" />
+              <Mapping SourceColumn="dt_devolucao" DataSetColumn="dt_devolucao" />
+              <Mapping SourceColumn="km_devolucao" DataSetColumn="km_devolucao" />
+              <Mapping SourceColumn="valor_pago" DataSetColumn="valor_pago" />
+              <Mapping SourceColumn="tipo_locacao" DataSetColumn="tipo_locacao" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -589,6 +648,75 @@ ON (tipo_pessoa.id = locatarios.tipo) </CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="locacoes" msprop:Generator_TableClassName="locacoesDataTable" msprop:Generator_TableVarName="tablelocacoes" msprop:Generator_RowChangedName="locacoesRowChanged" msprop:Generator_TablePropName="locacoes" msprop:Generator_RowDeletingName="locacoesRowDeleting" msprop:Generator_RowChangingName="locacoesRowChanging" msprop:Generator_RowEvHandlerName="locacoesRowChangeEventHandler" msprop:Generator_RowDeletedName="locacoesRowDeleted" msprop:Generator_RowClassName="locacoesRow" msprop:Generator_UserTableName="locacoes" msprop:Generator_RowEvArgName="locacoesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="franquia_dia" msprop:Generator_ColumnVarNameInTable="columnfranquia_dia" msprop:Generator_ColumnPropNameInRow="franquia_dia" msprop:Generator_ColumnPropNameInTable="franquia_diaColumn" msprop:Generator_UserColumnName="franquia_dia" type="xs:decimal" />
+              <xs:element name="diarias_previstas" msprop:Generator_ColumnVarNameInTable="columndiarias_previstas" msprop:Generator_ColumnPropNameInRow="diarias_previstas" msprop:Generator_ColumnPropNameInTable="diarias_previstasColumn" msprop:Generator_UserColumnName="diarias_previstas" type="xs:int" />
+              <xs:element name="destino" msprop:Generator_ColumnVarNameInTable="columndestino" msprop:Generator_ColumnPropNameInRow="destino" msprop:Generator_ColumnPropNameInTable="destinoColumn" msprop:Generator_UserColumnName="destino">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="km_saida" msprop:Generator_ColumnVarNameInTable="columnkm_saida" msprop:Generator_ColumnPropNameInRow="km_saida" msprop:Generator_ColumnPropNameInTable="km_saidaColumn" msprop:Generator_UserColumnName="km_saida" type="xs:int" />
+              <xs:element name="condutor_nome" msprop:Generator_ColumnVarNameInTable="columncondutor_nome" msprop:Generator_ColumnPropNameInRow="condutor_nome" msprop:Generator_ColumnPropNameInTable="condutor_nomeColumn" msprop:Generator_UserColumnName="condutor_nome" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="locatario_nome" msprop:Generator_ColumnVarNameInTable="columnlocatario_nome" msprop:Generator_ColumnPropNameInRow="locatario_nome" msprop:Generator_ColumnPropNameInTable="locatario_nomeColumn" msprop:Generator_UserColumnName="locatario_nome" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="veiculo_nome" msprop:Generator_ColumnVarNameInTable="columnveiculo_nome" msprop:Generator_ColumnPropNameInRow="veiculo_nome" msprop:Generator_ColumnPropNameInTable="veiculo_nomeColumn" msprop:Generator_UserColumnName="veiculo_nome" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="data_reserva" msprop:Generator_ColumnVarNameInTable="columndata_reserva" msprop:Generator_ColumnPropNameInRow="data_reserva" msprop:Generator_ColumnPropNameInTable="data_reservaColumn" msprop:Generator_UserColumnName="data_reserva" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="data_saida" msprop:Generator_ColumnVarNameInTable="columndata_saida" msprop:Generator_ColumnPropNameInRow="data_saida" msprop:Generator_ColumnPropNameInTable="data_saidaColumn" msprop:Generator_UserColumnName="data_saida" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="data_contrato" msprop:Generator_ColumnVarNameInTable="columndata_contrato" msprop:Generator_ColumnPropNameInRow="data_contrato" msprop:Generator_ColumnPropNameInTable="data_contratoColumn" msprop:Generator_UserColumnName="data_contrato" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dt_devolucao" msprop:Generator_ColumnVarNameInTable="columndt_devolucao" msprop:Generator_ColumnPropNameInRow="dt_devolucao" msprop:Generator_ColumnPropNameInTable="dt_devolucaoColumn" msprop:Generator_UserColumnName="dt_devolucao" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="km_devolucao" msprop:Generator_ColumnVarNameInTable="columnkm_devolucao" msprop:Generator_ColumnPropNameInRow="km_devolucao" msprop:Generator_ColumnPropNameInTable="km_devolucaoColumn" msprop:Generator_UserColumnName="km_devolucao" type="xs:int" minOccurs="0" />
+              <xs:element name="valor_pago" msprop:Generator_ColumnVarNameInTable="columnvalor_pago" msprop:Generator_ColumnPropNameInRow="valor_pago" msprop:Generator_ColumnPropNameInTable="valor_pagoColumn" msprop:Generator_UserColumnName="valor_pago" type="xs:decimal" minOccurs="0" />
+              <xs:element name="tipo_locacao" msprop:Generator_ColumnVarNameInTable="columntipo_locacao" msprop:Generator_ColumnPropNameInRow="tipo_locacao" msprop:Generator_ColumnPropNameInTable="tipo_locacaoColumn" msprop:Generator_UserColumnName="tipo_locacao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -610,6 +738,10 @@ ON (tipo_pessoa.id = locatarios.tipo) </CommandText>
     <xs:unique name="veiculos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:veiculos" />
       <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="locacoes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:locacoes" />
+      <xs:field xpath="mstns:id" />
     </xs:unique>
   </xs:element>
 </xs:schema>
