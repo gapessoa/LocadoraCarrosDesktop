@@ -26,6 +26,10 @@ namespace LocadoraCarrosDesktop {
         
         private condutoresDataTable tablecondutores;
         
+        private locatariosDataTable tablelocatarios;
+        
+        private veiculo_marcasDataTable tableveiculo_marcas;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -57,6 +61,12 @@ namespace LocadoraCarrosDesktop {
                 if ((ds.Tables["condutores"] != null)) {
                     base.Tables.Add(new condutoresDataTable(ds.Tables["condutores"]));
                 }
+                if ((ds.Tables["locatarios"] != null)) {
+                    base.Tables.Add(new locatariosDataTable(ds.Tables["locatarios"]));
+                }
+                if ((ds.Tables["veiculo_marcas"] != null)) {
+                    base.Tables.Add(new veiculo_marcasDataTable(ds.Tables["veiculo_marcas"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -82,6 +92,26 @@ namespace LocadoraCarrosDesktop {
         public condutoresDataTable condutores {
             get {
                 return this.tablecondutores;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public locatariosDataTable locatarios {
+            get {
+                return this.tablelocatarios;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public veiculo_marcasDataTable veiculo_marcas {
+            get {
+                return this.tableveiculo_marcas;
             }
         }
         
@@ -155,6 +185,12 @@ namespace LocadoraCarrosDesktop {
                 if ((ds.Tables["condutores"] != null)) {
                     base.Tables.Add(new condutoresDataTable(ds.Tables["condutores"]));
                 }
+                if ((ds.Tables["locatarios"] != null)) {
+                    base.Tables.Add(new locatariosDataTable(ds.Tables["locatarios"]));
+                }
+                if ((ds.Tables["veiculo_marcas"] != null)) {
+                    base.Tables.Add(new veiculo_marcasDataTable(ds.Tables["veiculo_marcas"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -194,6 +230,18 @@ namespace LocadoraCarrosDesktop {
                     this.tablecondutores.InitVars();
                 }
             }
+            this.tablelocatarios = ((locatariosDataTable)(base.Tables["locatarios"]));
+            if ((initTable == true)) {
+                if ((this.tablelocatarios != null)) {
+                    this.tablelocatarios.InitVars();
+                }
+            }
+            this.tableveiculo_marcas = ((veiculo_marcasDataTable)(base.Tables["veiculo_marcas"]));
+            if ((initTable == true)) {
+                if ((this.tableveiculo_marcas != null)) {
+                    this.tableveiculo_marcas.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -206,11 +254,27 @@ namespace LocadoraCarrosDesktop {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablecondutores = new condutoresDataTable();
             base.Tables.Add(this.tablecondutores);
+            this.tablelocatarios = new locatariosDataTable();
+            base.Tables.Add(this.tablelocatarios);
+            this.tableveiculo_marcas = new veiculo_marcasDataTable();
+            base.Tables.Add(this.tableveiculo_marcas);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializecondutores() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializelocatarios() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeveiculo_marcas() {
             return false;
         }
         
@@ -272,6 +336,12 @@ namespace LocadoraCarrosDesktop {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void condutoresRowChangeEventHandler(object sender, condutoresRowChangeEvent e);
         
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void locatariosRowChangeEventHandler(object sender, locatariosRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void veiculo_marcasRowChangeEventHandler(object sender, veiculo_marcasRowChangeEvent e);
+        
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
@@ -281,21 +351,7 @@ namespace LocadoraCarrosDesktop {
             
             private global::System.Data.DataColumn columnid;
             
-            private global::System.Data.DataColumn columnnome;
-            
-            private global::System.Data.DataColumn columncpf;
-            
-            private global::System.Data.DataColumn columnrg;
-            
-            private global::System.Data.DataColumn columnemail;
-            
             private global::System.Data.DataColumn columncnh_registro;
-            
-            private global::System.Data.DataColumn columncnh_data_expedicao;
-            
-            private global::System.Data.DataColumn columncnh_data_primeira_habilitacao;
-            
-            private global::System.Data.DataColumn columncnh_vencimento;
             
             private global::System.Data.DataColumn columncidade;
             
@@ -308,6 +364,20 @@ namespace LocadoraCarrosDesktop {
             private global::System.Data.DataColumn columncep;
             
             private global::System.Data.DataColumn columncomplemento;
+            
+            private global::System.Data.DataColumn columnNome;
+            
+            private global::System.Data.DataColumn columnCPF;
+            
+            private global::System.Data.DataColumn columnRG;
+            
+            private global::System.Data.DataColumn columnEmail;
+            
+            private global::System.Data.DataColumn columncnh_data_expedicao;
+            
+            private global::System.Data.DataColumn columncnh_data_primeira_habilitacao;
+            
+            private global::System.Data.DataColumn columncnh_vencimento;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -352,65 +422,9 @@ namespace LocadoraCarrosDesktop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn nomeColumn {
-                get {
-                    return this.columnnome;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn cpfColumn {
-                get {
-                    return this.columncpf;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn rgColumn {
-                get {
-                    return this.columnrg;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn emailColumn {
-                get {
-                    return this.columnemail;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn cnh_registroColumn {
                 get {
                     return this.columncnh_registro;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn cnh_data_expedicaoColumn {
-                get {
-                    return this.columncnh_data_expedicao;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn cnh_data_primeira_habilitacaoColumn {
-                get {
-                    return this.columncnh_data_primeira_habilitacao;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn cnh_vencimentoColumn {
-                get {
-                    return this.columncnh_vencimento;
                 }
             }
             
@@ -464,6 +478,62 @@ namespace LocadoraCarrosDesktop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NomeColumn {
+                get {
+                    return this.columnNome;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CPFColumn {
+                get {
+                    return this.columnCPF;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RGColumn {
+                get {
+                    return this.columnRG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EmailColumn {
+                get {
+                    return this.columnEmail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cnh_data_expedicaoColumn {
+                get {
+                    return this.columncnh_data_expedicao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cnh_data_primeira_habilitacaoColumn {
+                get {
+                    return this.columncnh_data_primeira_habilitacao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cnh_vencimentoColumn {
+                get {
+                    return this.columncnh_vencimento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -499,24 +569,24 @@ namespace LocadoraCarrosDesktop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public condutoresRow AddcondutoresRow(string nome, string cpf, string rg, string email, string cnh_registro, System.DateTime cnh_data_expedicao, System.DateTime cnh_data_primeira_habilitacao, System.DateTime cnh_vencimento, string cidade, string estado, string logradouro, string bairro, string cep, string complemento) {
+            public condutoresRow AddcondutoresRow(string cnh_registro, string cidade, string estado, string logradouro, string bairro, string cep, string complemento, string Nome, string CPF, string RG, string Email, string cnh_data_expedicao, string cnh_data_primeira_habilitacao, string cnh_vencimento) {
                 condutoresRow rowcondutoresRow = ((condutoresRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        nome,
-                        cpf,
-                        rg,
-                        email,
                         cnh_registro,
-                        cnh_data_expedicao,
-                        cnh_data_primeira_habilitacao,
-                        cnh_vencimento,
                         cidade,
                         estado,
                         logradouro,
                         bairro,
                         cep,
-                        complemento};
+                        complemento,
+                        Nome,
+                        CPF,
+                        RG,
+                        Email,
+                        cnh_data_expedicao,
+                        cnh_data_primeira_habilitacao,
+                        cnh_vencimento};
                 rowcondutoresRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowcondutoresRow);
                 return rowcondutoresRow;
@@ -547,20 +617,20 @@ namespace LocadoraCarrosDesktop {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
-                this.columnnome = base.Columns["nome"];
-                this.columncpf = base.Columns["cpf"];
-                this.columnrg = base.Columns["rg"];
-                this.columnemail = base.Columns["email"];
                 this.columncnh_registro = base.Columns["cnh_registro"];
-                this.columncnh_data_expedicao = base.Columns["cnh_data_expedicao"];
-                this.columncnh_data_primeira_habilitacao = base.Columns["cnh_data_primeira_habilitacao"];
-                this.columncnh_vencimento = base.Columns["cnh_vencimento"];
                 this.columncidade = base.Columns["cidade"];
                 this.columnestado = base.Columns["estado"];
                 this.columnlogradouro = base.Columns["logradouro"];
                 this.columnbairro = base.Columns["bairro"];
                 this.columncep = base.Columns["cep"];
                 this.columncomplemento = base.Columns["complemento"];
+                this.columnNome = base.Columns["Nome"];
+                this.columnCPF = base.Columns["CPF"];
+                this.columnRG = base.Columns["RG"];
+                this.columnEmail = base.Columns["Email"];
+                this.columncnh_data_expedicao = base.Columns["cnh_data_expedicao"];
+                this.columncnh_data_primeira_habilitacao = base.Columns["cnh_data_primeira_habilitacao"];
+                this.columncnh_vencimento = base.Columns["cnh_vencimento"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -568,22 +638,8 @@ namespace LocadoraCarrosDesktop {
             private void InitClass() {
                 this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
-                this.columnnome = new global::System.Data.DataColumn("nome", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnome);
-                this.columncpf = new global::System.Data.DataColumn("cpf", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncpf);
-                this.columnrg = new global::System.Data.DataColumn("rg", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnrg);
-                this.columnemail = new global::System.Data.DataColumn("email", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnemail);
                 this.columncnh_registro = new global::System.Data.DataColumn("cnh_registro", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncnh_registro);
-                this.columncnh_data_expedicao = new global::System.Data.DataColumn("cnh_data_expedicao", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncnh_data_expedicao);
-                this.columncnh_data_primeira_habilitacao = new global::System.Data.DataColumn("cnh_data_primeira_habilitacao", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncnh_data_primeira_habilitacao);
-                this.columncnh_vencimento = new global::System.Data.DataColumn("cnh_vencimento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncnh_vencimento);
                 this.columncidade = new global::System.Data.DataColumn("cidade", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncidade);
                 this.columnestado = new global::System.Data.DataColumn("estado", typeof(string), null, global::System.Data.MappingType.Element);
@@ -596,6 +652,20 @@ namespace LocadoraCarrosDesktop {
                 base.Columns.Add(this.columncep);
                 this.columncomplemento = new global::System.Data.DataColumn("complemento", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncomplemento);
+                this.columnNome = new global::System.Data.DataColumn("Nome", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNome);
+                this.columnCPF = new global::System.Data.DataColumn("CPF", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCPF);
+                this.columnRG = new global::System.Data.DataColumn("RG", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRG);
+                this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmail);
+                this.columncnh_data_expedicao = new global::System.Data.DataColumn("cnh_data_expedicao", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncnh_data_expedicao);
+                this.columncnh_data_primeira_habilitacao = new global::System.Data.DataColumn("cnh_data_primeira_habilitacao", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncnh_data_primeira_habilitacao);
+                this.columncnh_vencimento = new global::System.Data.DataColumn("cnh_vencimento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncnh_vencimento);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -603,19 +673,8 @@ namespace LocadoraCarrosDesktop {
                 this.columnid.AutoIncrementStep = -1;
                 this.columnid.AllowDBNull = false;
                 this.columnid.Unique = true;
-                this.columnnome.AllowDBNull = false;
-                this.columnnome.MaxLength = 255;
-                this.columncpf.AllowDBNull = false;
-                this.columncpf.MaxLength = 11;
-                this.columnrg.AllowDBNull = false;
-                this.columnrg.MaxLength = 12;
-                this.columnemail.AllowDBNull = false;
-                this.columnemail.MaxLength = 255;
                 this.columncnh_registro.AllowDBNull = false;
                 this.columncnh_registro.MaxLength = 11;
-                this.columncnh_data_expedicao.AllowDBNull = false;
-                this.columncnh_data_primeira_habilitacao.AllowDBNull = false;
-                this.columncnh_vencimento.AllowDBNull = false;
                 this.columncidade.AllowDBNull = false;
                 this.columncidade.MaxLength = 255;
                 this.columnestado.AllowDBNull = false;
@@ -628,6 +687,17 @@ namespace LocadoraCarrosDesktop {
                 this.columncep.MaxLength = 9;
                 this.columncomplemento.AllowDBNull = false;
                 this.columncomplemento.MaxLength = 255;
+                this.columnNome.AllowDBNull = false;
+                this.columnNome.MaxLength = 255;
+                this.columnCPF.AllowDBNull = false;
+                this.columnCPF.MaxLength = 11;
+                this.columnRG.AllowDBNull = false;
+                this.columnRG.MaxLength = 12;
+                this.columnEmail.AllowDBNull = false;
+                this.columnEmail.MaxLength = 255;
+                this.columncnh_data_expedicao.MaxLength = 10;
+                this.columncnh_data_primeira_habilitacao.MaxLength = 10;
+                this.columncnh_vencimento.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -755,6 +825,637 @@ namespace LocadoraCarrosDesktop {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class locatariosDataTable : global::System.Data.TypedTableBase<locatariosRow> {
+            
+            private global::System.Data.DataColumn columnid;
+            
+            private global::System.Data.DataColumn columnnome;
+            
+            private global::System.Data.DataColumn columncpf;
+            
+            private global::System.Data.DataColumn columncidade;
+            
+            private global::System.Data.DataColumn columnestado;
+            
+            private global::System.Data.DataColumn columncnpj;
+            
+            private global::System.Data.DataColumn columnTipo;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public locatariosDataTable() {
+                this.TableName = "locatarios";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal locatariosDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected locatariosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idColumn {
+                get {
+                    return this.columnid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nomeColumn {
+                get {
+                    return this.columnnome;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cpfColumn {
+                get {
+                    return this.columncpf;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cidadeColumn {
+                get {
+                    return this.columncidade;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn estadoColumn {
+                get {
+                    return this.columnestado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cnpjColumn {
+                get {
+                    return this.columncnpj;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TipoColumn {
+                get {
+                    return this.columnTipo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public locatariosRow this[int index] {
+                get {
+                    return ((locatariosRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event locatariosRowChangeEventHandler locatariosRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event locatariosRowChangeEventHandler locatariosRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event locatariosRowChangeEventHandler locatariosRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event locatariosRowChangeEventHandler locatariosRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddlocatariosRow(locatariosRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public locatariosRow AddlocatariosRow(string nome, string cpf, string cidade, string estado, string cnpj, string Tipo) {
+                locatariosRow rowlocatariosRow = ((locatariosRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        nome,
+                        cpf,
+                        cidade,
+                        estado,
+                        cnpj,
+                        Tipo};
+                rowlocatariosRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowlocatariosRow);
+                return rowlocatariosRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public locatariosRow FindByid(int id) {
+                return ((locatariosRow)(this.Rows.Find(new object[] {
+                            id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                locatariosDataTable cln = ((locatariosDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new locatariosDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnid = base.Columns["id"];
+                this.columnnome = base.Columns["nome"];
+                this.columncpf = base.Columns["cpf"];
+                this.columncidade = base.Columns["cidade"];
+                this.columnestado = base.Columns["estado"];
+                this.columncnpj = base.Columns["cnpj"];
+                this.columnTipo = base.Columns["Tipo"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
+                this.columnnome = new global::System.Data.DataColumn("nome", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnome);
+                this.columncpf = new global::System.Data.DataColumn("cpf", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncpf);
+                this.columncidade = new global::System.Data.DataColumn("cidade", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncidade);
+                this.columnestado = new global::System.Data.DataColumn("estado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnestado);
+                this.columncnpj = new global::System.Data.DataColumn("cnpj", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncnpj);
+                this.columnTipo = new global::System.Data.DataColumn("Tipo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTipo);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid}, true));
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = -1;
+                this.columnid.AutoIncrementStep = -1;
+                this.columnid.AllowDBNull = false;
+                this.columnid.Unique = true;
+                this.columnnome.AllowDBNull = false;
+                this.columnnome.MaxLength = 255;
+                this.columncpf.MaxLength = 11;
+                this.columncidade.AllowDBNull = false;
+                this.columncidade.MaxLength = 255;
+                this.columnestado.AllowDBNull = false;
+                this.columnestado.MaxLength = 2;
+                this.columncnpj.MaxLength = 14;
+                this.columnTipo.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public locatariosRow NewlocatariosRow() {
+                return ((locatariosRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new locatariosRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(locatariosRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.locatariosRowChanged != null)) {
+                    this.locatariosRowChanged(this, new locatariosRowChangeEvent(((locatariosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.locatariosRowChanging != null)) {
+                    this.locatariosRowChanging(this, new locatariosRowChangeEvent(((locatariosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.locatariosRowDeleted != null)) {
+                    this.locatariosRowDeleted(this, new locatariosRowChangeEvent(((locatariosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.locatariosRowDeleting != null)) {
+                    this.locatariosRowDeleting(this, new locatariosRowChangeEvent(((locatariosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovelocatariosRow(locatariosRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                locadoraDataSet ds = new locadoraDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "locatariosDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class veiculo_marcasDataTable : global::System.Data.TypedTableBase<veiculo_marcasRow> {
+            
+            private global::System.Data.DataColumn columnid;
+            
+            private global::System.Data.DataColumn columnnome;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public veiculo_marcasDataTable() {
+                this.TableName = "veiculo_marcas";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal veiculo_marcasDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected veiculo_marcasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idColumn {
+                get {
+                    return this.columnid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nomeColumn {
+                get {
+                    return this.columnnome;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public veiculo_marcasRow this[int index] {
+                get {
+                    return ((veiculo_marcasRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event veiculo_marcasRowChangeEventHandler veiculo_marcasRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event veiculo_marcasRowChangeEventHandler veiculo_marcasRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event veiculo_marcasRowChangeEventHandler veiculo_marcasRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event veiculo_marcasRowChangeEventHandler veiculo_marcasRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addveiculo_marcasRow(veiculo_marcasRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public veiculo_marcasRow Addveiculo_marcasRow(string nome) {
+                veiculo_marcasRow rowveiculo_marcasRow = ((veiculo_marcasRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        nome};
+                rowveiculo_marcasRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowveiculo_marcasRow);
+                return rowveiculo_marcasRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public veiculo_marcasRow FindByid(int id) {
+                return ((veiculo_marcasRow)(this.Rows.Find(new object[] {
+                            id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                veiculo_marcasDataTable cln = ((veiculo_marcasDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new veiculo_marcasDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnid = base.Columns["id"];
+                this.columnnome = base.Columns["nome"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
+                this.columnnome = new global::System.Data.DataColumn("nome", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnome);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid}, true));
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = -1;
+                this.columnid.AutoIncrementStep = -1;
+                this.columnid.AllowDBNull = false;
+                this.columnid.Unique = true;
+                this.columnnome.AllowDBNull = false;
+                this.columnnome.MaxLength = 255;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public veiculo_marcasRow Newveiculo_marcasRow() {
+                return ((veiculo_marcasRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new veiculo_marcasRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(veiculo_marcasRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.veiculo_marcasRowChanged != null)) {
+                    this.veiculo_marcasRowChanged(this, new veiculo_marcasRowChangeEvent(((veiculo_marcasRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.veiculo_marcasRowChanging != null)) {
+                    this.veiculo_marcasRowChanging(this, new veiculo_marcasRowChangeEvent(((veiculo_marcasRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.veiculo_marcasRowDeleted != null)) {
+                    this.veiculo_marcasRowDeleted(this, new veiculo_marcasRowChangeEvent(((veiculo_marcasRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.veiculo_marcasRowDeleting != null)) {
+                    this.veiculo_marcasRowDeleting(this, new veiculo_marcasRowChangeEvent(((veiculo_marcasRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removeveiculo_marcasRow(veiculo_marcasRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                locadoraDataSet ds = new locadoraDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "veiculo_marcasDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class condutoresRow : global::System.Data.DataRow {
@@ -781,89 +1482,12 @@ namespace LocadoraCarrosDesktop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string nome {
-                get {
-                    return ((string)(this[this.tablecondutores.nomeColumn]));
-                }
-                set {
-                    this[this.tablecondutores.nomeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string cpf {
-                get {
-                    return ((string)(this[this.tablecondutores.cpfColumn]));
-                }
-                set {
-                    this[this.tablecondutores.cpfColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string rg {
-                get {
-                    return ((string)(this[this.tablecondutores.rgColumn]));
-                }
-                set {
-                    this[this.tablecondutores.rgColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string email {
-                get {
-                    return ((string)(this[this.tablecondutores.emailColumn]));
-                }
-                set {
-                    this[this.tablecondutores.emailColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string cnh_registro {
                 get {
                     return ((string)(this[this.tablecondutores.cnh_registroColumn]));
                 }
                 set {
                     this[this.tablecondutores.cnh_registroColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime cnh_data_expedicao {
-                get {
-                    return ((global::System.DateTime)(this[this.tablecondutores.cnh_data_expedicaoColumn]));
-                }
-                set {
-                    this[this.tablecondutores.cnh_data_expedicaoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime cnh_data_primeira_habilitacao {
-                get {
-                    return ((global::System.DateTime)(this[this.tablecondutores.cnh_data_primeira_habilitacaoColumn]));
-                }
-                set {
-                    this[this.tablecondutores.cnh_data_primeira_habilitacaoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime cnh_vencimento {
-                get {
-                    return ((global::System.DateTime)(this[this.tablecondutores.cnh_vencimentoColumn]));
-                }
-                set {
-                    this[this.tablecondutores.cnh_vencimentoColumn] = value;
                 }
             }
             
@@ -932,6 +1556,315 @@ namespace LocadoraCarrosDesktop {
                     this[this.tablecondutores.complementoColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Nome {
+                get {
+                    return ((string)(this[this.tablecondutores.NomeColumn]));
+                }
+                set {
+                    this[this.tablecondutores.NomeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CPF {
+                get {
+                    return ((string)(this[this.tablecondutores.CPFColumn]));
+                }
+                set {
+                    this[this.tablecondutores.CPFColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string RG {
+                get {
+                    return ((string)(this[this.tablecondutores.RGColumn]));
+                }
+                set {
+                    this[this.tablecondutores.RGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Email {
+                get {
+                    return ((string)(this[this.tablecondutores.EmailColumn]));
+                }
+                set {
+                    this[this.tablecondutores.EmailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cnh_data_expedicao {
+                get {
+                    try {
+                        return ((string)(this[this.tablecondutores.cnh_data_expedicaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cnh_data_expedicao\' in table \'condutores\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecondutores.cnh_data_expedicaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cnh_data_primeira_habilitacao {
+                get {
+                    try {
+                        return ((string)(this[this.tablecondutores.cnh_data_primeira_habilitacaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cnh_data_primeira_habilitacao\' in table \'condutores\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecondutores.cnh_data_primeira_habilitacaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cnh_vencimento {
+                get {
+                    try {
+                        return ((string)(this[this.tablecondutores.cnh_vencimentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cnh_vencimento\' in table \'condutores\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecondutores.cnh_vencimentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscnh_data_expedicaoNull() {
+                return this.IsNull(this.tablecondutores.cnh_data_expedicaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcnh_data_expedicaoNull() {
+                this[this.tablecondutores.cnh_data_expedicaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscnh_data_primeira_habilitacaoNull() {
+                return this.IsNull(this.tablecondutores.cnh_data_primeira_habilitacaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcnh_data_primeira_habilitacaoNull() {
+                this[this.tablecondutores.cnh_data_primeira_habilitacaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscnh_vencimentoNull() {
+                return this.IsNull(this.tablecondutores.cnh_vencimentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcnh_vencimentoNull() {
+                this[this.tablecondutores.cnh_vencimentoColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class locatariosRow : global::System.Data.DataRow {
+            
+            private locatariosDataTable tablelocatarios;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal locatariosRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablelocatarios = ((locatariosDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id {
+                get {
+                    return ((int)(this[this.tablelocatarios.idColumn]));
+                }
+                set {
+                    this[this.tablelocatarios.idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nome {
+                get {
+                    return ((string)(this[this.tablelocatarios.nomeColumn]));
+                }
+                set {
+                    this[this.tablelocatarios.nomeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cpf {
+                get {
+                    try {
+                        return ((string)(this[this.tablelocatarios.cpfColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cpf\' in table \'locatarios\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelocatarios.cpfColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cidade {
+                get {
+                    return ((string)(this[this.tablelocatarios.cidadeColumn]));
+                }
+                set {
+                    this[this.tablelocatarios.cidadeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string estado {
+                get {
+                    return ((string)(this[this.tablelocatarios.estadoColumn]));
+                }
+                set {
+                    this[this.tablelocatarios.estadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cnpj {
+                get {
+                    try {
+                        return ((string)(this[this.tablelocatarios.cnpjColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cnpj\' in table \'locatarios\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelocatarios.cnpjColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Tipo {
+                get {
+                    try {
+                        return ((string)(this[this.tablelocatarios.TipoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Tipo\' in table \'locatarios\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelocatarios.TipoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscpfNull() {
+                return this.IsNull(this.tablelocatarios.cpfColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcpfNull() {
+                this[this.tablelocatarios.cpfColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscnpjNull() {
+                return this.IsNull(this.tablelocatarios.cnpjColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcnpjNull() {
+                this[this.tablelocatarios.cnpjColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTipoNull() {
+                return this.IsNull(this.tablelocatarios.TipoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTipoNull() {
+                this[this.tablelocatarios.TipoColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class veiculo_marcasRow : global::System.Data.DataRow {
+            
+            private veiculo_marcasDataTable tableveiculo_marcas;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal veiculo_marcasRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableveiculo_marcas = ((veiculo_marcasDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id {
+                get {
+                    return ((int)(this[this.tableveiculo_marcas.idColumn]));
+                }
+                set {
+                    this[this.tableveiculo_marcas.idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nome {
+                get {
+                    return ((string)(this[this.tableveiculo_marcas.nomeColumn]));
+                }
+                set {
+                    this[this.tableveiculo_marcas.nomeColumn] = value;
+                }
+            }
         }
         
         /// <summary>
@@ -954,6 +1887,74 @@ namespace LocadoraCarrosDesktop {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public condutoresRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class locatariosRowChangeEvent : global::System.EventArgs {
+            
+            private locatariosRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public locatariosRowChangeEvent(locatariosRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public locatariosRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class veiculo_marcasRowChangeEvent : global::System.EventArgs {
+            
+            private veiculo_marcasRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public veiculo_marcasRowChangeEvent(veiculo_marcasRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public veiculo_marcasRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1094,24 +2095,24 @@ namespace LocadoraCarrosDesktop.locadoraDataSetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "condutores";
             tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("nome", "nome");
-            tableMapping.ColumnMappings.Add("cpf", "cpf");
-            tableMapping.ColumnMappings.Add("rg", "rg");
-            tableMapping.ColumnMappings.Add("email", "email");
             tableMapping.ColumnMappings.Add("cnh_registro", "cnh_registro");
-            tableMapping.ColumnMappings.Add("cnh_data_expedicao", "cnh_data_expedicao");
-            tableMapping.ColumnMappings.Add("cnh_data_primeira_habilitacao", "cnh_data_primeira_habilitacao");
-            tableMapping.ColumnMappings.Add("cnh_vencimento", "cnh_vencimento");
             tableMapping.ColumnMappings.Add("cidade", "cidade");
             tableMapping.ColumnMappings.Add("estado", "estado");
             tableMapping.ColumnMappings.Add("logradouro", "logradouro");
             tableMapping.ColumnMappings.Add("bairro", "bairro");
             tableMapping.ColumnMappings.Add("cep", "cep");
             tableMapping.ColumnMappings.Add("complemento", "complemento");
+            tableMapping.ColumnMappings.Add("Nome", "Nome");
+            tableMapping.ColumnMappings.Add("CPF", "CPF");
+            tableMapping.ColumnMappings.Add("RG", "RG");
+            tableMapping.ColumnMappings.Add("Email", "Email");
+            tableMapping.ColumnMappings.Add("cnh_data_expedicao", "cnh_data_expedicao");
+            tableMapping.ColumnMappings.Add("cnh_data_primeira_habilitacao", "cnh_data_primeira_habilitacao");
+            tableMapping.ColumnMappings.Add("cnh_vencimento", "cnh_vencimento");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `condutores` WHERE ((`id` = @Original_id) AND (`nome` = @Original_nome) AND (`cpf` = @Original_cpf) AND (`rg` = @Original_rg) AND (`email` = @Original_email) AND (`cnh_registro` = @Original_cnh_registro) AND (`cnh_data_expedicao` = @Original_cnh_data_expedicao) AND (`cnh_data_primeira_habilitacao` = @Original_cnh_data_primeira_habilitacao) AND (`cnh_vencimento` = @Original_cnh_vencimento) AND (`cidade` = @Original_cidade) AND (`estado` = @Original_estado) AND (`logradouro` = @Original_logradouro) AND (`bairro` = @Original_bairro) AND (`cep` = @Original_cep) AND (`complemento` = @Original_complemento))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `condutores` WHERE ((`id` = @Original_id) AND (`nome` = @Original_Nome) AND (`cpf` = @Original_CPF) AND (`rg` = @Original_RG) AND (`email` = @Original_Email) AND (`cnh_registro` = @Original_cnh_registro) AND (`cidade` = @Original_cidade) AND (`estado` = @Original_estado) AND (`logradouro` = @Original_logradouro) AND (`bairro` = @Original_bairro) AND (`cep` = @Original_cep) AND (`complemento` = @Original_complemento))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@Original_id";
@@ -1122,35 +2123,35 @@ namespace LocadoraCarrosDesktop.locadoraDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_nome";
+            param.ParameterName = "@Original_Nome";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "nome";
+            param.SourceColumn = "Nome";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_cpf";
+            param.ParameterName = "@Original_CPF";
             param.DbType = global::System.Data.DbType.StringFixedLength;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
             param.IsNullable = true;
-            param.SourceColumn = "cpf";
+            param.SourceColumn = "CPF";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_rg";
+            param.ParameterName = "@Original_RG";
             param.DbType = global::System.Data.DbType.StringFixedLength;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
             param.IsNullable = true;
-            param.SourceColumn = "rg";
+            param.SourceColumn = "RG";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_email";
+            param.ParameterName = "@Original_Email";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "email";
+            param.SourceColumn = "Email";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -1159,30 +2160,6 @@ namespace LocadoraCarrosDesktop.locadoraDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "cnh_registro";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_cnh_data_expedicao";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = "cnh_data_expedicao";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_cnh_data_primeira_habilitacao";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = "cnh_data_primeira_habilitacao";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_cnh_vencimento";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = "cnh_vencimento";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -1235,35 +2212,38 @@ namespace LocadoraCarrosDesktop.locadoraDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO `condutores` (`nome`, `cpf`, `rg`, `email`, `cnh_registro`, `cnh_data_expedicao`, `cnh_data_primeira_habilitacao`, `cnh_vencimento`, `cidade`, `estado`, `logradouro`, `bairro`, `cep`, `complemento`) VALUES (@nome, @cpf, @rg, @email, @cnh_registro, @cnh_data_expedicao, @cnh_data_primeira_habilitacao, @cnh_vencimento, @cidade, @estado, @logradouro, @bairro, @cep, @complemento)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `condutores` (`nome`, `cpf`, `rg`, `email`, `cnh_registro`, `cidade`," +
+                " `estado`, `logradouro`, `bairro`, `cep`, `complemento`) VALUES (@Nome, @CPF, @R" +
+                "G, @Email, @cnh_registro, @cidade, @estado, @logradouro, @bairro, @cep, @complem" +
+                "ento)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@nome";
+            param.ParameterName = "@Nome";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "nome";
+            param.SourceColumn = "Nome";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@cpf";
+            param.ParameterName = "@CPF";
             param.DbType = global::System.Data.DbType.StringFixedLength;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
             param.IsNullable = true;
-            param.SourceColumn = "cpf";
+            param.SourceColumn = "CPF";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@rg";
+            param.ParameterName = "@RG";
             param.DbType = global::System.Data.DbType.StringFixedLength;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
             param.IsNullable = true;
-            param.SourceColumn = "rg";
+            param.SourceColumn = "RG";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@email";
+            param.ParameterName = "@Email";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "email";
+            param.SourceColumn = "Email";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@cnh_registro";
@@ -1271,27 +2251,6 @@ namespace LocadoraCarrosDesktop.locadoraDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "cnh_registro";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@cnh_data_expedicao";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = "cnh_data_expedicao";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@cnh_data_primeira_habilitacao";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = "cnh_data_primeira_habilitacao";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@cnh_vencimento";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = "cnh_vencimento";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@cidade";
@@ -1337,35 +2296,35 @@ namespace LocadoraCarrosDesktop.locadoraDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `condutores` SET `nome` = @nome, `cpf` = @cpf, `rg` = @rg, `email` = @email, `cnh_registro` = @cnh_registro, `cnh_data_expedicao` = @cnh_data_expedicao, `cnh_data_primeira_habilitacao` = @cnh_data_primeira_habilitacao, `cnh_vencimento` = @cnh_vencimento, `cidade` = @cidade, `estado` = @estado, `logradouro` = @logradouro, `bairro` = @bairro, `cep` = @cep, `complemento` = @complemento WHERE ((`id` = @Original_id) AND (`nome` = @Original_nome) AND (`cpf` = @Original_cpf) AND (`rg` = @Original_rg) AND (`email` = @Original_email) AND (`cnh_registro` = @Original_cnh_registro) AND (`cnh_data_expedicao` = @Original_cnh_data_expedicao) AND (`cnh_data_primeira_habilitacao` = @Original_cnh_data_primeira_habilitacao) AND (`cnh_vencimento` = @Original_cnh_vencimento) AND (`cidade` = @Original_cidade) AND (`estado` = @Original_estado) AND (`logradouro` = @Original_logradouro) AND (`bairro` = @Original_bairro) AND (`cep` = @Original_cep) AND (`complemento` = @Original_complemento))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `condutores` SET `nome` = @Nome, `cpf` = @CPF, `rg` = @RG, `email` = @Email, `cnh_registro` = @cnh_registro, `cidade` = @cidade, `estado` = @estado, `logradouro` = @logradouro, `bairro` = @bairro, `cep` = @cep, `complemento` = @complemento WHERE ((`id` = @Original_id) AND (`nome` = @Original_Nome) AND (`cpf` = @Original_CPF) AND (`rg` = @Original_RG) AND (`email` = @Original_Email) AND (`cnh_registro` = @Original_cnh_registro) AND (`cidade` = @Original_cidade) AND (`estado` = @Original_estado) AND (`logradouro` = @Original_logradouro) AND (`bairro` = @Original_bairro) AND (`cep` = @Original_cep) AND (`complemento` = @Original_complemento))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@nome";
+            param.ParameterName = "@Nome";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "nome";
+            param.SourceColumn = "Nome";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@cpf";
+            param.ParameterName = "@CPF";
             param.DbType = global::System.Data.DbType.StringFixedLength;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
             param.IsNullable = true;
-            param.SourceColumn = "cpf";
+            param.SourceColumn = "CPF";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@rg";
+            param.ParameterName = "@RG";
             param.DbType = global::System.Data.DbType.StringFixedLength;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
             param.IsNullable = true;
-            param.SourceColumn = "rg";
+            param.SourceColumn = "RG";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@email";
+            param.ParameterName = "@Email";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "email";
+            param.SourceColumn = "Email";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@cnh_registro";
@@ -1373,27 +2332,6 @@ namespace LocadoraCarrosDesktop.locadoraDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "cnh_registro";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@cnh_data_expedicao";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = "cnh_data_expedicao";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@cnh_data_primeira_habilitacao";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = "cnh_data_primeira_habilitacao";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@cnh_vencimento";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = "cnh_vencimento";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@cidade";
@@ -1446,35 +2384,35 @@ namespace LocadoraCarrosDesktop.locadoraDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_nome";
+            param.ParameterName = "@Original_Nome";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "nome";
+            param.SourceColumn = "Nome";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_cpf";
+            param.ParameterName = "@Original_CPF";
             param.DbType = global::System.Data.DbType.StringFixedLength;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
             param.IsNullable = true;
-            param.SourceColumn = "cpf";
+            param.SourceColumn = "CPF";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_rg";
+            param.ParameterName = "@Original_RG";
             param.DbType = global::System.Data.DbType.StringFixedLength;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
             param.IsNullable = true;
-            param.SourceColumn = "rg";
+            param.SourceColumn = "RG";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_email";
+            param.ParameterName = "@Original_Email";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "email";
+            param.SourceColumn = "Email";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -1483,30 +2421,6 @@ namespace LocadoraCarrosDesktop.locadoraDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "cnh_registro";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_cnh_data_expedicao";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = "cnh_data_expedicao";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_cnh_data_primeira_habilitacao";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = "cnh_data_primeira_habilitacao";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_cnh_vencimento";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = "cnh_vencimento";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -1569,16 +2483,10 @@ namespace LocadoraCarrosDesktop.locadoraDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[2];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `id`, `nome`, `cpf`, `rg`, `email`, `cnh_registro`, `cnh_data_expedicao`, " +
-                "`cnh_data_primeira_habilitacao`, `cnh_vencimento`, `cidade`, `estado`, `logradou" +
-                "ro`, `bairro`, `cep`, `complemento` FROM `condutores`";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT
+            this._commandCollection[0].CommandText = @"SELECT 
 condutores.id as id,
 condutores.nome as Nome,
 condutores.cpf as CPF,
@@ -1594,9 +2502,9 @@ condutores.logradouro,
 condutores.bairro,
 condutores.cep,
 condutores.complemento
-FROM
+ FROM 
 condutores";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1618,30 +2526,6 @@ condutores";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual locadoraDataSet.condutoresDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            locadoraDataSet.condutoresDataTable dataTable = new locadoraDataSet.condutoresDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(locadoraDataSet.condutoresDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual locadoraDataSet.condutoresDataTable GetDataBy() {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
             locadoraDataSet.condutoresDataTable dataTable = new locadoraDataSet.condutoresDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -1680,31 +2564,31 @@ condutores";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, string Original_nome, string Original_cpf, string Original_rg, string Original_email, string Original_cnh_registro, System.DateTime Original_cnh_data_expedicao, System.DateTime Original_cnh_data_primeira_habilitacao, System.DateTime Original_cnh_vencimento, string Original_cidade, string Original_estado, string Original_logradouro, string Original_bairro, string Original_cep, string Original_complemento) {
+        public virtual int Delete(int Original_id, string Original_Nome, string Original_CPF, string Original_RG, string Original_Email, string Original_cnh_registro, string Original_cidade, string Original_estado, string Original_logradouro, string Original_bairro, string Original_cep, string Original_complemento) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
-            if ((Original_nome == null)) {
-                throw new global::System.ArgumentNullException("Original_nome");
+            if ((Original_Nome == null)) {
+                throw new global::System.ArgumentNullException("Original_Nome");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_nome));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Nome));
             }
-            if ((Original_cpf == null)) {
-                throw new global::System.ArgumentNullException("Original_cpf");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_cpf));
-            }
-            if ((Original_rg == null)) {
-                throw new global::System.ArgumentNullException("Original_rg");
+            if ((Original_CPF == null)) {
+                throw new global::System.ArgumentNullException("Original_CPF");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_rg));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_CPF));
             }
-            if ((Original_email == null)) {
-                throw new global::System.ArgumentNullException("Original_email");
+            if ((Original_RG == null)) {
+                throw new global::System.ArgumentNullException("Original_RG");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_email));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_RG));
+            }
+            if ((Original_Email == null)) {
+                throw new global::System.ArgumentNullException("Original_Email");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Email));
             }
             if ((Original_cnh_registro == null)) {
                 throw new global::System.ArgumentNullException("Original_cnh_registro");
@@ -1712,44 +2596,41 @@ condutores";
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_cnh_registro));
             }
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_cnh_data_expedicao));
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_cnh_data_primeira_habilitacao));
-            this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_cnh_vencimento));
             if ((Original_cidade == null)) {
                 throw new global::System.ArgumentNullException("Original_cidade");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_cidade));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_cidade));
             }
             if ((Original_estado == null)) {
                 throw new global::System.ArgumentNullException("Original_estado");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_estado));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_estado));
             }
             if ((Original_logradouro == null)) {
                 throw new global::System.ArgumentNullException("Original_logradouro");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_logradouro));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_logradouro));
             }
             if ((Original_bairro == null)) {
                 throw new global::System.ArgumentNullException("Original_bairro");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_bairro));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_bairro));
             }
             if ((Original_cep == null)) {
                 throw new global::System.ArgumentNullException("Original_cep");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((string)(Original_cep));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_cep));
             }
             if ((Original_complemento == null)) {
                 throw new global::System.ArgumentNullException("Original_complemento");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_complemento));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_complemento));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1771,30 +2652,30 @@ condutores";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string nome, string cpf, string rg, string email, string cnh_registro, System.DateTime cnh_data_expedicao, System.DateTime cnh_data_primeira_habilitacao, System.DateTime cnh_vencimento, string cidade, string estado, string logradouro, string bairro, string cep, string complemento) {
-            if ((nome == null)) {
-                throw new global::System.ArgumentNullException("nome");
+        public virtual int Insert(string Nome, string CPF, string RG, string Email, string cnh_registro, string cidade, string estado, string logradouro, string bairro, string cep, string complemento) {
+            if ((Nome == null)) {
+                throw new global::System.ArgumentNullException("Nome");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(nome));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Nome));
             }
-            if ((cpf == null)) {
-                throw new global::System.ArgumentNullException("cpf");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(cpf));
-            }
-            if ((rg == null)) {
-                throw new global::System.ArgumentNullException("rg");
+            if ((CPF == null)) {
+                throw new global::System.ArgumentNullException("CPF");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(rg));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(CPF));
             }
-            if ((email == null)) {
-                throw new global::System.ArgumentNullException("email");
+            if ((RG == null)) {
+                throw new global::System.ArgumentNullException("RG");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(email));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(RG));
+            }
+            if ((Email == null)) {
+                throw new global::System.ArgumentNullException("Email");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Email));
             }
             if ((cnh_registro == null)) {
                 throw new global::System.ArgumentNullException("cnh_registro");
@@ -1802,44 +2683,41 @@ condutores";
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(cnh_registro));
             }
-            this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(cnh_data_expedicao));
-            this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(cnh_data_primeira_habilitacao));
-            this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(cnh_vencimento));
             if ((cidade == null)) {
                 throw new global::System.ArgumentNullException("cidade");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(cidade));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(cidade));
             }
             if ((estado == null)) {
                 throw new global::System.ArgumentNullException("estado");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(estado));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(estado));
             }
             if ((logradouro == null)) {
                 throw new global::System.ArgumentNullException("logradouro");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(logradouro));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(logradouro));
             }
             if ((bairro == null)) {
                 throw new global::System.ArgumentNullException("bairro");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(bairro));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(bairro));
             }
             if ((cep == null)) {
                 throw new global::System.ArgumentNullException("cep");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(cep));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(cep));
             }
             if ((complemento == null)) {
                 throw new global::System.ArgumentNullException("complemento");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(complemento));
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(complemento));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1862,14 +2740,11 @@ condutores";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    string nome, 
-                    string cpf, 
-                    string rg, 
-                    string email, 
+                    string Nome, 
+                    string CPF, 
+                    string RG, 
+                    string Email, 
                     string cnh_registro, 
-                    System.DateTime cnh_data_expedicao, 
-                    System.DateTime cnh_data_primeira_habilitacao, 
-                    System.DateTime cnh_vencimento, 
                     string cidade, 
                     string estado, 
                     string logradouro, 
@@ -1877,43 +2752,40 @@ condutores";
                     string cep, 
                     string complemento, 
                     int Original_id, 
-                    string Original_nome, 
-                    string Original_cpf, 
-                    string Original_rg, 
-                    string Original_email, 
+                    string Original_Nome, 
+                    string Original_CPF, 
+                    string Original_RG, 
+                    string Original_Email, 
                     string Original_cnh_registro, 
-                    System.DateTime Original_cnh_data_expedicao, 
-                    System.DateTime Original_cnh_data_primeira_habilitacao, 
-                    System.DateTime Original_cnh_vencimento, 
                     string Original_cidade, 
                     string Original_estado, 
                     string Original_logradouro, 
                     string Original_bairro, 
                     string Original_cep, 
                     string Original_complemento) {
-            if ((nome == null)) {
-                throw new global::System.ArgumentNullException("nome");
+            if ((Nome == null)) {
+                throw new global::System.ArgumentNullException("Nome");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(nome));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Nome));
             }
-            if ((cpf == null)) {
-                throw new global::System.ArgumentNullException("cpf");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(cpf));
-            }
-            if ((rg == null)) {
-                throw new global::System.ArgumentNullException("rg");
+            if ((CPF == null)) {
+                throw new global::System.ArgumentNullException("CPF");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(rg));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(CPF));
             }
-            if ((email == null)) {
-                throw new global::System.ArgumentNullException("email");
+            if ((RG == null)) {
+                throw new global::System.ArgumentNullException("RG");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(email));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(RG));
+            }
+            if ((Email == null)) {
+                throw new global::System.ArgumentNullException("Email");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Email));
             }
             if ((cnh_registro == null)) {
                 throw new global::System.ArgumentNullException("cnh_registro");
@@ -1921,114 +2793,629 @@ condutores";
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(cnh_registro));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(cnh_data_expedicao));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(cnh_data_primeira_habilitacao));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(cnh_vencimento));
             if ((cidade == null)) {
                 throw new global::System.ArgumentNullException("cidade");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(cidade));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(cidade));
             }
             if ((estado == null)) {
                 throw new global::System.ArgumentNullException("estado");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(estado));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(estado));
             }
             if ((logradouro == null)) {
                 throw new global::System.ArgumentNullException("logradouro");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(logradouro));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(logradouro));
             }
             if ((bairro == null)) {
                 throw new global::System.ArgumentNullException("bairro");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(bairro));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(bairro));
             }
             if ((cep == null)) {
                 throw new global::System.ArgumentNullException("cep");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(cep));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(cep));
             }
             if ((complemento == null)) {
                 throw new global::System.ArgumentNullException("complemento");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(complemento));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(complemento));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_id));
-            if ((Original_nome == null)) {
-                throw new global::System.ArgumentNullException("Original_nome");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_nome));
-            }
-            if ((Original_cpf == null)) {
-                throw new global::System.ArgumentNullException("Original_cpf");
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_id));
+            if ((Original_Nome == null)) {
+                throw new global::System.ArgumentNullException("Original_Nome");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_cpf));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Nome));
             }
-            if ((Original_rg == null)) {
-                throw new global::System.ArgumentNullException("Original_rg");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_rg));
-            }
-            if ((Original_email == null)) {
-                throw new global::System.ArgumentNullException("Original_email");
+            if ((Original_CPF == null)) {
+                throw new global::System.ArgumentNullException("Original_CPF");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_email));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_CPF));
+            }
+            if ((Original_RG == null)) {
+                throw new global::System.ArgumentNullException("Original_RG");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_RG));
+            }
+            if ((Original_Email == null)) {
+                throw new global::System.ArgumentNullException("Original_Email");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Email));
             }
             if ((Original_cnh_registro == null)) {
                 throw new global::System.ArgumentNullException("Original_cnh_registro");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_cnh_registro));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_cnh_registro));
             }
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(Original_cnh_data_expedicao));
-            this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(Original_cnh_data_primeira_habilitacao));
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((System.DateTime)(Original_cnh_vencimento));
             if ((Original_cidade == null)) {
                 throw new global::System.ArgumentNullException("Original_cidade");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_cidade));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_cidade));
             }
             if ((Original_estado == null)) {
                 throw new global::System.ArgumentNullException("Original_estado");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_estado));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_estado));
             }
             if ((Original_logradouro == null)) {
                 throw new global::System.ArgumentNullException("Original_logradouro");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_logradouro));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_logradouro));
             }
             if ((Original_bairro == null)) {
                 throw new global::System.ArgumentNullException("Original_bairro");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_bairro));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_bairro));
             }
             if ((Original_cep == null)) {
                 throw new global::System.ArgumentNullException("Original_cep");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_cep));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_cep));
             }
             if ((Original_complemento == null)) {
                 throw new global::System.ArgumentNullException("Original_complemento");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_complemento));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_complemento));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class locatariosTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
+        
+        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
+        
+        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
+        
+        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public locatariosTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "locatarios";
+            tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.ColumnMappings.Add("nome", "nome");
+            tableMapping.ColumnMappings.Add("cpf", "cpf");
+            tableMapping.ColumnMappings.Add("cidade", "cidade");
+            tableMapping.ColumnMappings.Add("estado", "estado");
+            tableMapping.ColumnMappings.Add("cnpj", "cnpj");
+            tableMapping.ColumnMappings.Add("Tipo", "Tipo");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
+            this._connection.ConnectionString = global::LocadoraCarrosDesktop.Properties.Settings.Default.locadoraConnectionString1;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT locatarios.id as id,locatarios.nome as nome, cpf, cnpj, cidade, estado, ti" +
+                "po_pessoa.nome as Tipo FROM locatarios LEFT JOIN tipo_pessoa ON (locatarios.tipo" +
+                " = tipo_pessoa.id)";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(locadoraDataSet.locatariosDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual locadoraDataSet.locatariosDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            locadoraDataSet.locatariosDataTable dataTable = new locadoraDataSet.locatariosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class veiculo_marcasTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
+        
+        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
+        
+        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
+        
+        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public veiculo_marcasTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "veiculo_marcas";
+            tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.ColumnMappings.Add("nome", "nome");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `veiculo_marcas` WHERE ((`id` = @Original_id) AND (`nome` = @Original" +
+                "_nome))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@Original_id";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@Original_nome";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "nome";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `veiculo_marcas` (`nome`) VALUES (@nome)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@nome";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "nome";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE `veiculo_marcas` SET `nome` = @nome WHERE ((`id` = @Original_id) AND (`nom" +
+                "e` = @Original_nome))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@nome";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "nome";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@Original_id";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@Original_nome";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "nome";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
+            this._connection.ConnectionString = global::LocadoraCarrosDesktop.Properties.Settings.Default.locadoraConnectionString1;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT * FROM veiculo_marcas";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(locadoraDataSet.veiculo_marcasDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual locadoraDataSet.veiculo_marcasDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            locadoraDataSet.veiculo_marcasDataTable dataTable = new locadoraDataSet.veiculo_marcasDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(locadoraDataSet.veiculo_marcasDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(locadoraDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "veiculo_marcas");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_id, string Original_nome) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
+            if ((Original_nome == null)) {
+                throw new global::System.ArgumentNullException("Original_nome");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_nome));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string nome) {
+            if ((nome == null)) {
+                throw new global::System.ArgumentNullException("nome");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(nome));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string nome, int Original_id, string Original_nome) {
+            if ((nome == null)) {
+                throw new global::System.ArgumentNullException("nome");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(nome));
+            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_id));
+            if ((Original_nome == null)) {
+                throw new global::System.ArgumentNullException("Original_nome");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_nome));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2061,6 +3448,8 @@ condutores";
         
         private condutoresTableAdapter _condutoresTableAdapter;
         
+        private veiculo_marcasTableAdapter _veiculo_marcasTableAdapter;
+        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -2092,6 +3481,20 @@ condutores";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public veiculo_marcasTableAdapter veiculo_marcasTableAdapter {
+            get {
+                return this._veiculo_marcasTableAdapter;
+            }
+            set {
+                this._veiculo_marcasTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -2113,6 +3516,10 @@ condutores";
                             && (this._condutoresTableAdapter.Connection != null))) {
                     return this._condutoresTableAdapter.Connection;
                 }
+                if (((this._veiculo_marcasTableAdapter != null) 
+                            && (this._veiculo_marcasTableAdapter.Connection != null))) {
+                    return this._veiculo_marcasTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -2127,6 +3534,9 @@ condutores";
             get {
                 int count = 0;
                 if ((this._condutoresTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._veiculo_marcasTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -2149,6 +3559,15 @@ condutores";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._veiculo_marcasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.veiculo_marcas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._veiculo_marcasTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -2167,6 +3586,14 @@ condutores";
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._veiculo_marcasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.veiculo_marcas.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._veiculo_marcasTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -2177,6 +3604,14 @@ condutores";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(locadoraDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._veiculo_marcasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.veiculo_marcas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._veiculo_marcasTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._condutoresTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.condutores.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -2229,6 +3664,11 @@ condutores";
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
+            if (((this._veiculo_marcasTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._veiculo_marcasTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -2268,6 +3708,15 @@ condutores";
                     if (this._condutoresTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._condutoresTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._condutoresTableAdapter.Adapter);
+                    }
+                }
+                if ((this._veiculo_marcasTableAdapter != null)) {
+                    revertConnections.Add(this._veiculo_marcasTableAdapter, this._veiculo_marcasTableAdapter.Connection);
+                    this._veiculo_marcasTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(workConnection));
+                    this._veiculo_marcasTableAdapter.Transaction = ((global::MySql.Data.MySqlClient.MySqlTransaction)(workTransaction));
+                    if (this._veiculo_marcasTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._veiculo_marcasTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._veiculo_marcasTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -2331,6 +3780,10 @@ condutores";
                 if ((this._condutoresTableAdapter != null)) {
                     this._condutoresTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._condutoresTableAdapter]));
                     this._condutoresTableAdapter.Transaction = null;
+                }
+                if ((this._veiculo_marcasTableAdapter != null)) {
+                    this._veiculo_marcasTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._veiculo_marcasTableAdapter]));
+                    this._veiculo_marcasTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

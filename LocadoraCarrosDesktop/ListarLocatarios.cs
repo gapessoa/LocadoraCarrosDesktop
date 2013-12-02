@@ -11,22 +11,37 @@ using System.Globalization;
 
 namespace LocadoraCarrosDesktop
 {
-    public partial class Form1 : Form
+    public partial class ListarLocatarios : Form
     {
-        public Form1()
+        public ListarLocatarios()
         {
             InitializeComponent();
-
-            //groupBox1.Anchor =
-            //                    AnchorStyles.Bottom |
+            //dataGridView1.Anchor =
+            //    AnchorStyles.Bottom |
             //    AnchorStyles.Right |
             //    AnchorStyles.Top |
             //    AnchorStyles.Left;
+
+            groupBox1.Anchor =
+                                AnchorStyles.Bottom |
+                AnchorStyles.Right |
+                AnchorStyles.Top |
+                AnchorStyles.Left;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void ListarLocatarios_Load(object sender, EventArgs e)
         {
-           
+            // TODO: This line of code loads data into the 'locadoraDataSet.locatarios' table. You can move, or remove it, as needed.
+            this.locatariosTableAdapter.Fill(this.locadoraDataSet.locatarios);
+            // TODO: This line of code loads data into the 'locadoraDataSet.condutores' table. You can move, or remove it, as needed.
+            //this.condutoresTableAdapter.Fill(this.locadoraDataSet.condutores);
+            // TODO: This line of code loads data into the 'locadoraDataSet.locatarios' table. You can move, or remove it, as needed.
+            //this.locatariosTableAdapter.Fill(this.locadoraDataSet.locatarios);
+            // TODO: This line of code loads data into the 'locadoraDataSet.locatarios' table. You can move, or remove it, as needed.
+            //this.locatariosTableAdapter.Fill(this.locadoraDataSet.locatarios);
+            // TODO: This line of code loads data into the 'locadoraDataSet.condutores' table. You can move, or remove it, as needed.
+           // this.condutoresTableAdapter.Fill(this.locadoraDataSet.condutores);
+
         }
 
         private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,23 +87,9 @@ namespace LocadoraCarrosDesktop
 
         private void listarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            ListarCondutores form = new ListarCondutores();
-            form.MdiParent = this;
+            Form1 form = new Form1();
             form.Show();
-        }
-
-        private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            ListarLocatarios form = new ListarLocatarios();
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        private void listarToolStripMenuItem4_Click(object sender, EventArgs e)
-        {
-            ListarMarcas form = new ListarMarcas();
-            form.MdiParent = this;
-            form.Show();
+            this.Hide();
         }
 
     }

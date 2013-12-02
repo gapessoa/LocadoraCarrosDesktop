@@ -27,10 +27,21 @@ namespace LocadoraCarrosDesktop.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;User Id=root;password=tete;Persist Security Info=True;database=l" +
-            "ocadora")]
+            "ocadora; Allow Zero Datetime=True")]
         public string locadoraConnectionString {
             get {
                 return ((string)(this["locadoraConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;User Id=root;password=tete;Persist Security Info=True;database=l" +
+            "ocadora")]
+        public string locadoraConnectionString1 {
+            get {
+                return ((string)(this["locadoraConnectionString1"]));
             }
         }
     }

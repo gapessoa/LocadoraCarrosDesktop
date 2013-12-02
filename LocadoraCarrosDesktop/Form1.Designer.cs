@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,14 +45,7 @@
             this.listarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.condutoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.locadoraDataSet = new LocadoraCarrosDesktop.locadoraDataSet();
-            this.condutoresTableAdapter = new LocadoraCarrosDesktop.locadoraDataSetTableAdapters.condutoresTableAdapter();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.condutoresBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.locadoraDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -107,6 +99,7 @@
             this.listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
             this.listarToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.listarToolStripMenuItem1.Text = "Listar";
+            this.listarToolStripMenuItem1.Click += new System.EventHandler(this.listarToolStripMenuItem1_Click);
             // 
             // cadastrarToolStripMenuItem1
             // 
@@ -129,6 +122,7 @@
             this.listarToolStripMenuItem2.Name = "listarToolStripMenuItem2";
             this.listarToolStripMenuItem2.Size = new System.Drawing.Size(124, 22);
             this.listarToolStripMenuItem2.Text = "Listar";
+            this.listarToolStripMenuItem2.Click += new System.EventHandler(this.listarToolStripMenuItem2_Click);
             // 
             // cadastrarToolStripMenuItem2
             // 
@@ -171,13 +165,14 @@
             // listarToolStripMenuItem4
             // 
             this.listarToolStripMenuItem4.Name = "listarToolStripMenuItem4";
-            this.listarToolStripMenuItem4.Size = new System.Drawing.Size(124, 22);
+            this.listarToolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
             this.listarToolStripMenuItem4.Text = "Listar";
+            this.listarToolStripMenuItem4.Click += new System.EventHandler(this.listarToolStripMenuItem4_Click);
             // 
             // cadastrarToolStripMenuItem4
             // 
             this.cadastrarToolStripMenuItem4.Name = "cadastrarToolStripMenuItem4";
-            this.cadastrarToolStripMenuItem4.Size = new System.Drawing.Size(124, 22);
+            this.cadastrarToolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
             this.cadastrarToolStripMenuItem4.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem4.Click += new System.EventHandler(this.cadastrarToolStripMenuItem4_Click);
             // 
@@ -188,57 +183,21 @@
             this.sobreToolStripMenuItem.Text = "Sobre";
             this.sobreToolStripMenuItem.Click += new System.EventHandler(this.sobreToolStripMenuItem_Click);
             // 
-            // condutoresBindingSource
-            // 
-            this.condutoresBindingSource.DataMember = "condutores";
-            this.condutoresBindingSource.DataSource = this.locadoraDataSet;
-            // 
-            // locadoraDataSet
-            // 
-            this.locadoraDataSet.DataSetName = "locadoraDataSet";
-            this.locadoraDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // condutoresTableAdapter
-            // 
-            this.condutoresTableAdapter.ClearBeforeFill = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(12, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(223, 22);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "Listagem de Condutores";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(12, 65);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1243, 576);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1267, 653);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "LocCar V.0.0.1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.condutoresBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.locadoraDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,11 +222,10 @@
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
-        private locadoraDataSet locadoraDataSet;
-        private System.Windows.Forms.BindingSource condutoresBindingSource;
-        private locadoraDataSetTableAdapters.condutoresTableAdapter condutoresTableAdapter;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cpfDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rgDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
     }
 }
 
