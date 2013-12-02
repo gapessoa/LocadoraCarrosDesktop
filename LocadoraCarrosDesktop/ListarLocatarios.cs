@@ -16,11 +16,6 @@ namespace LocadoraCarrosDesktop
         public ListarLocatarios()
         {
             InitializeComponent();
-            //dataGridView1.Anchor =
-            //    AnchorStyles.Bottom |
-            //    AnchorStyles.Right |
-            //    AnchorStyles.Top |
-            //    AnchorStyles.Left;
 
             groupBox1.Anchor =
                                 AnchorStyles.Bottom |
@@ -33,15 +28,6 @@ namespace LocadoraCarrosDesktop
         {
             // TODO: This line of code loads data into the 'locadoraDataSet.locatarios' table. You can move, or remove it, as needed.
             this.locatariosTableAdapter.Fill(this.locadoraDataSet.locatarios);
-            // TODO: This line of code loads data into the 'locadoraDataSet.condutores' table. You can move, or remove it, as needed.
-            //this.condutoresTableAdapter.Fill(this.locadoraDataSet.condutores);
-            // TODO: This line of code loads data into the 'locadoraDataSet.locatarios' table. You can move, or remove it, as needed.
-            //this.locatariosTableAdapter.Fill(this.locadoraDataSet.locatarios);
-            // TODO: This line of code loads data into the 'locadoraDataSet.locatarios' table. You can move, or remove it, as needed.
-            //this.locatariosTableAdapter.Fill(this.locadoraDataSet.locatarios);
-            // TODO: This line of code loads data into the 'locadoraDataSet.condutores' table. You can move, or remove it, as needed.
-           // this.condutoresTableAdapter.Fill(this.locadoraDataSet.condutores);
-
         }
 
         private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
@@ -90,6 +76,49 @@ namespace LocadoraCarrosDesktop
             Form1 form = new Form1();
             form.Show();
             this.Hide();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            CadastrarLocatario form = new CadastrarLocatario();
+            form.ShowDialog();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            int rowindex = locatariosDataGridView.CurrentCell.RowIndex;
+
+            string id = locatariosDataGridView.Rows[rowindex].Cells[0].Value.ToString();
+
+            CadastrarLocatario form = new CadastrarLocatario(id);
+            form.Show();
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            this.locatariosTableAdapter.Fill(this.locadoraDataSet.locatarios);
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            DialogResult response = MessageBox.Show("Você tem certeza que deseja deletar este registro?", "Deletar Registro?",
+         MessageBoxButtons.OKCancel,
+         MessageBoxIcon.Question,
+         MessageBoxDefaultButton.Button2);
+
+            if (response != DialogResult.Cancel)
+            {
+
+                int rowindex = locatariosDataGridView.CurrentCell.RowIndex;
+
+                string id = locatariosDataGridView.Rows[rowindex].Cells[0].Value.ToString();
+
+                theConn conn = new theConn();
+
+                conn.Cmd("DELETE FROM locatarios WHERE id = '" + id + "'");
+
+                locatariosDataGridView.Rows.RemoveAt(rowindex);
+            }
         }
 
     }

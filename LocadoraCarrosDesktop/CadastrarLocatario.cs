@@ -12,8 +12,13 @@ namespace LocadoraCarrosDesktop
 {
     public partial class CadastrarLocatario : Form
     {
-        public CadastrarLocatario()
+        private string id;
+        private bool update_mode = false;
+
+        public CadastrarLocatario(string id = "vazio")
         {
+            this.id = id;
+
             InitializeComponent();
 
             theConn conn = new theConn();
@@ -42,9 +47,40 @@ namespace LocadoraCarrosDesktop
 
             cbEstado.DataSource = cb_estados;
 
+            if (this.id != "vazio")
+            {
+                Console.WriteLine(this.id);
+                this.getValues();
+                this.chanceTitles();
+                this.update_mode = true;
+            }
+
             cbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCidade.DropDownStyle = ComboBoxStyle.DropDownList;
             cbTipo.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void chanceTitles()
+        {
+            groupBox1.Text = "Editar Locatário";
+            this.Text = "Editar Locatário";
+        }
+
+        private void getValues()
+        {
+            theConn conn = new theConn();
+
+            var rows = conn.Select("SELECT * FROM locatarios WHERE id = '" + this.id + "'");
+
+            txtNome.Text = rows[0]["nome"].ToString();
+            txtCPF.Text = rows[0]["cpf"].ToString();
+            txtEmail.Text = rows[0]["email"].ToString();
+            cbEstado.SelectedItem = rows[0]["estado"].ToString();
+            cbCidade.SelectedItem = rows[0]["cidade"].ToString();
+            txtLogradouro.Text = rows[0]["logradouro"].ToString();
+            txtCEP.Text = rows[0]["cep"].ToString();
+            txtComplemento.Text = rows[0]["complemento"].ToString();
+            txtBairro.Text = rows[0]["bairro"].ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -75,10 +111,22 @@ namespace LocadoraCarrosDesktop
             conn.InsertItem("bairro", txtBairro.Text);
             conn.InsertItem("cep", txtCEP.Text);
 
-            conn.Insert("locatarios");
+            string msg = "Erro";
 
-            MessageBox.Show("O locatário foi registrado com sucesso!");
+            if (!this.update_mode)
+            {
+                conn.Insert("locatarios");
 
+                msg = "O condutor foi cadastrado com sucesso!";
+            }
+            else
+            {
+                conn.Update("locatarios", "id", this.id);
+
+                msg = "O condutor foi editado com sucesso!";
+            }
+
+            MessageBox.Show(msg);
             this.Close();
         }
 
