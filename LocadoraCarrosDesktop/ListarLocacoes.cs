@@ -37,57 +37,24 @@ namespace LocadoraCarrosDesktop
             aboutForm.ShowDialog();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void toolStripButton1_Click_2(object sender, EventArgs e)
         {
-
-        }
-
-        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cadastrarToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            CadastrarLocatario cadastrarForm = new CadastrarLocatario();
-            cadastrarForm.ShowDialog();
-        }
-
-        private void cadastrarToolStripMenuItem4_Click(object sender, EventArgs e)
-        {
-            CadastrarMarca cadastrarForm = new CadastrarMarca();
-            cadastrarForm.ShowDialog();
-        }
-
-        private void cadastrarToolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-            CadastrarVeiculo cadastrarForm = new CadastrarVeiculo();
-            cadastrarForm.ShowDialog();
-        }
-
-        private void cadastrarToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            CadastrarCondutor cadastrarForm = new CadastrarCondutor();
-            cadastrarForm.ShowDialog();
-        }
-
-        private void listarToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            Form1 form = new Form1();
-            form.Show();
-            this.Hide();
-        }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            CadastrarLocatario form = new CadastrarLocatario();
+            CadastrarLocacao form = new CadastrarLocacao();
             form.ShowDialog();
         }
 
-        private void toolStripButton1_Click_1(object sender, EventArgs e)
+        private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            CadastrarLocatario form = new CadastrarLocatario();
+            this.locacoesTableAdapter.Fill(this.locadoraDataSet.locacoes);
+        }
 
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            int rowindex = locacoesDataGridView.CurrentCell.RowIndex;
+
+            string id = locacoesDataGridView.Rows[rowindex].Cells[0].Value.ToString();
+
+            CadastrarDevolucao form = new CadastrarDevolucao(id);
             form.ShowDialog();
         }
     }

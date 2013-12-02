@@ -119,6 +119,12 @@
     <Compile Include="CadastrarLocatario.Designer.cs">
       <DependentUpon>CadastrarLocatario.cs</DependentUpon>
     </Compile>
+    <Compile Include="CadastrarDevolucao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastrarDevolucao.Designer.cs">
+      <DependentUpon>CadastrarDevolucao.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListarLocacoes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CadastrarLocatario.resx">
       <DependentUpon>CadastrarLocatario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastrarDevolucao.resx">
+      <DependentUpon>CadastrarDevolucao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListarLocacoes.resx">
       <DependentUpon>ListarLocacoes.cs</DependentUpon>
