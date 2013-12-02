@@ -105,7 +105,7 @@ namespace LocadoraCarrosDesktop
             string id = condutoresDataGridView.Rows[rowindex].Cells[0].Value.ToString();
 
             CadastrarCondutor form = new CadastrarCondutor(id);
-            form.Show();
+            form.ShowDialog();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -134,10 +134,6 @@ namespace LocadoraCarrosDesktop
 
                 condutoresDataGridView.Rows.RemoveAt(rowindex);
             }
-
         }
-
-
-
     }
 }
