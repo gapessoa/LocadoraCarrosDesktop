@@ -188,6 +188,31 @@ condutores</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="veiculosTableAdapter" GeneratorDataComponentClassName="veiculosTableAdapter" Name="veiculos" UserDataComponentName="veiculosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="locadoraConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT veiculos.id as ID, veiculos.nome as Nome, veiculo_marcas.nome as Marca,placa as Placa, chassi as Chassi, cor as Cor, modelo as Modelo, ano as Ano, km as Kilometragem, combustivel.nome as Combustivel FROM veiculos JOIN veiculo_marcas ON (veiculos.marca_id = veiculo_marcas.id) JOIN combustivel ON (combustivel.id = veiculos.tipo_combustivel)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="Nome" DataSetColumn="Nome" />
+              <Mapping SourceColumn="Marca" DataSetColumn="Marca" />
+              <Mapping SourceColumn="Placa" DataSetColumn="Placa" />
+              <Mapping SourceColumn="Chassi" DataSetColumn="Chassi" />
+              <Mapping SourceColumn="Cor" DataSetColumn="Cor" />
+              <Mapping SourceColumn="Modelo" DataSetColumn="Modelo" />
+              <Mapping SourceColumn="Ano" DataSetColumn="Ano" />
+              <Mapping SourceColumn="Kilometragem" DataSetColumn="Kilometragem" />
+              <Mapping SourceColumn="Combustivel" DataSetColumn="Combustivel" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -196,7 +221,7 @@ condutores</CommandText>
   <xs:element name="locadoraDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="locadoraDataSet" msprop:Generator_UserDSName="locadoraDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="condutores" msprop:Generator_TableClassName="condutoresDataTable" msprop:Generator_TableVarName="tablecondutores" msprop:Generator_TablePropName="condutores" msprop:Generator_RowDeletingName="condutoresRowDeleting" msprop:Generator_RowChangingName="condutoresRowChanging" msprop:Generator_RowEvHandlerName="condutoresRowChangeEventHandler" msprop:Generator_RowDeletedName="condutoresRowDeleted" msprop:Generator_UserTableName="condutores" msprop:Generator_RowChangedName="condutoresRowChanged" msprop:Generator_RowEvArgName="condutoresRowChangeEvent" msprop:Generator_RowClassName="condutoresRow">
+        <xs:element name="condutores" msprop:Generator_TableClassName="condutoresDataTable" msprop:Generator_TableVarName="tablecondutores" msprop:Generator_RowChangedName="condutoresRowChanged" msprop:Generator_TablePropName="condutores" msprop:Generator_RowDeletingName="condutoresRowDeleting" msprop:Generator_RowChangingName="condutoresRowChanging" msprop:Generator_RowEvHandlerName="condutoresRowChangeEventHandler" msprop:Generator_RowDeletedName="condutoresRowDeleted" msprop:Generator_RowClassName="condutoresRow" msprop:Generator_UserTableName="condutores" msprop:Generator_RowEvArgName="condutoresRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -301,7 +326,7 @@ condutores</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="locatarios" msprop:Generator_TableClassName="locatariosDataTable" msprop:Generator_TableVarName="tablelocatarios" msprop:Generator_RowChangedName="locatariosRowChanged" msprop:Generator_TablePropName="locatarios" msprop:Generator_RowDeletingName="locatariosRowDeleting" msprop:Generator_RowChangingName="locatariosRowChanging" msprop:Generator_RowEvHandlerName="locatariosRowChangeEventHandler" msprop:Generator_RowDeletedName="locatariosRowDeleted" msprop:Generator_RowClassName="locatariosRow" msprop:Generator_UserTableName="locatarios" msprop:Generator_RowEvArgName="locatariosRowChangeEvent">
+        <xs:element name="locatarios" msprop:Generator_TableClassName="locatariosDataTable" msprop:Generator_TableVarName="tablelocatarios" msprop:Generator_TablePropName="locatarios" msprop:Generator_RowDeletingName="locatariosRowDeleting" msprop:Generator_RowChangingName="locatariosRowChanging" msprop:Generator_RowEvHandlerName="locatariosRowChangeEventHandler" msprop:Generator_RowDeletedName="locatariosRowDeleted" msprop:Generator_UserTableName="locatarios" msprop:Generator_RowChangedName="locatariosRowChanged" msprop:Generator_RowEvArgName="locatariosRowChangeEvent" msprop:Generator_RowClassName="locatariosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -350,7 +375,7 @@ condutores</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="veiculo_marcas" msprop:Generator_TableClassName="veiculo_marcasDataTable" msprop:Generator_TableVarName="tableveiculo_marcas" msprop:Generator_TablePropName="veiculo_marcas" msprop:Generator_RowDeletingName="veiculo_marcasRowDeleting" msprop:Generator_RowChangingName="veiculo_marcasRowChanging" msprop:Generator_RowEvHandlerName="veiculo_marcasRowChangeEventHandler" msprop:Generator_RowDeletedName="veiculo_marcasRowDeleted" msprop:Generator_UserTableName="veiculo_marcas" msprop:Generator_RowChangedName="veiculo_marcasRowChanged" msprop:Generator_RowEvArgName="veiculo_marcasRowChangeEvent" msprop:Generator_RowClassName="veiculo_marcasRow">
+        <xs:element name="veiculo_marcas" msprop:Generator_TableClassName="veiculo_marcasDataTable" msprop:Generator_TableVarName="tableveiculo_marcas" msprop:Generator_RowChangedName="veiculo_marcasRowChanged" msprop:Generator_TablePropName="veiculo_marcas" msprop:Generator_RowDeletingName="veiculo_marcasRowDeleting" msprop:Generator_RowChangingName="veiculo_marcasRowChanging" msprop:Generator_RowEvHandlerName="veiculo_marcasRowChangeEventHandler" msprop:Generator_RowDeletedName="veiculo_marcasRowDeleted" msprop:Generator_RowClassName="veiculo_marcasRow" msprop:Generator_UserTableName="veiculo_marcas" msprop:Generator_RowEvArgName="veiculo_marcasRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -358,6 +383,70 @@ condutores</CommandText>
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="veiculos" msprop:Generator_TableClassName="veiculosDataTable" msprop:Generator_TableVarName="tableveiculos" msprop:Generator_TablePropName="veiculos" msprop:Generator_RowDeletingName="veiculosRowDeleting" msprop:Generator_RowChangingName="veiculosRowChanging" msprop:Generator_RowEvHandlerName="veiculosRowChangeEventHandler" msprop:Generator_RowDeletedName="veiculosRowDeleted" msprop:Generator_UserTableName="veiculos" msprop:Generator_RowChangedName="veiculosRowChanged" msprop:Generator_RowEvArgName="veiculosRowChangeEvent" msprop:Generator_RowClassName="veiculosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Nome" msprop:Generator_ColumnVarNameInTable="columnNome" msprop:Generator_ColumnPropNameInRow="Nome" msprop:Generator_ColumnPropNameInTable="NomeColumn" msprop:Generator_UserColumnName="Nome">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Marca" msprop:Generator_ColumnVarNameInTable="columnMarca" msprop:Generator_ColumnPropNameInRow="Marca" msprop:Generator_ColumnPropNameInTable="MarcaColumn" msprop:Generator_UserColumnName="Marca">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Placa" msprop:Generator_ColumnVarNameInTable="columnPlaca" msprop:Generator_ColumnPropNameInRow="Placa" msprop:Generator_ColumnPropNameInTable="PlacaColumn" msprop:Generator_UserColumnName="Placa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Chassi" msprop:Generator_ColumnVarNameInTable="columnChassi" msprop:Generator_ColumnPropNameInRow="Chassi" msprop:Generator_ColumnPropNameInTable="ChassiColumn" msprop:Generator_UserColumnName="Chassi">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="17" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cor" msprop:Generator_ColumnVarNameInTable="columnCor" msprop:Generator_ColumnPropNameInRow="Cor" msprop:Generator_ColumnPropNameInTable="CorColumn" msprop:Generator_UserColumnName="Cor">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Modelo" msprop:Generator_ColumnVarNameInTable="columnModelo" msprop:Generator_ColumnPropNameInRow="Modelo" msprop:Generator_ColumnPropNameInTable="ModeloColumn" msprop:Generator_UserColumnName="Modelo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ano" msprop:Generator_ColumnVarNameInTable="columnAno" msprop:Generator_ColumnPropNameInRow="Ano" msprop:Generator_ColumnPropNameInTable="AnoColumn" msprop:Generator_UserColumnName="Ano">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Kilometragem" msprop:Generator_ColumnVarNameInTable="columnKilometragem" msprop:Generator_ColumnPropNameInRow="Kilometragem" msprop:Generator_ColumnPropNameInTable="KilometragemColumn" msprop:Generator_UserColumnName="Kilometragem" type="xs:int" />
+              <xs:element name="Combustivel" msprop:Generator_ColumnVarNameInTable="columnCombustivel" msprop:Generator_ColumnPropNameInRow="Combustivel" msprop:Generator_ColumnPropNameInTable="CombustivelColumn" msprop:Generator_UserColumnName="Combustivel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -377,6 +466,10 @@ condutores</CommandText>
     <xs:unique name="veiculo_marcas_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:veiculo_marcas" />
       <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="veiculos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:veiculos" />
+      <xs:field xpath="mstns:ID" />
     </xs:unique>
   </xs:element>
 </xs:schema>

@@ -142,14 +142,16 @@
             // listarToolStripMenuItem3
             // 
             this.listarToolStripMenuItem3.Name = "listarToolStripMenuItem3";
-            this.listarToolStripMenuItem3.Size = new System.Drawing.Size(124, 22);
+            this.listarToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
             this.listarToolStripMenuItem3.Text = "Listar";
+            this.listarToolStripMenuItem3.Click += new System.EventHandler(this.listarToolStripMenuItem3_Click);
             // 
             // cadastrarToolStripMenuItem3
             // 
             this.cadastrarToolStripMenuItem3.Name = "cadastrarToolStripMenuItem3";
-            this.cadastrarToolStripMenuItem3.Size = new System.Drawing.Size(124, 22);
+            this.cadastrarToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
             this.cadastrarToolStripMenuItem3.Text = "Cadastrar";
+            this.cadastrarToolStripMenuItem3.Click += new System.EventHandler(this.cadastrarToolStripMenuItem3_Click_1);
             // 
             // marcasToolStripMenuItem
             // 
