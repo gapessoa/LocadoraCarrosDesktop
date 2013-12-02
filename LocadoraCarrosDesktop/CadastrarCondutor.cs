@@ -12,10 +12,15 @@ namespace LocadoraCarrosDesktop
 {
     public partial class CadastrarCondutor : Form
     {
-        public CadastrarCondutor()
+        private string id;
+        private bool update_mode = false;
+
+        public CadastrarCondutor(string id = "vazio")
         {
+            this.id = id;
+
             InitializeComponent();
-            
+
             theConn conn = new theConn();
             List<string> cb_estados = new List<string>();
 
@@ -28,8 +33,43 @@ namespace LocadoraCarrosDesktop
 
             cbEstado.DataSource = cb_estados;
 
+            if (this.id != "vazio")
+            {
+                Console.WriteLine(this.id);
+                this.getValues();
+                this.chanceTitles();
+                this.update_mode = true;
+            }
+
             cbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCidade.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void chanceTitles()
+        {
+            groupBox1.Text = "Editar Condutor";
+            this.Text = "Editar Condutor";
+        }
+
+        private void getValues()
+        {
+            theConn conn = new theConn();
+
+            var rows = conn.Select("SELECT condutores.id,condutores.nome,condutores.cpf,condutores.rg,condutores.email,condutores.cnh_registro,DATE_FORMAT(condutores.cnh_data_expedicao, '%d/%c/%Y') as cnh_data_expedicao,DATE_FORMAT(condutores.cnh_data_primeira_habilitacao, '%d/%c/%Y') as cnh_data_primeira_habilitacao,DATE_FORMAT(condutores.cnh_vencimento, '%d/%c/%Y') as cnh_vencimento,condutores.cidade,condutores.estado,condutores.logradouro,condutores.bairro,condutores.cep,condutores.complemento FROM condutores WHERE id = '" + this.id + "'");
+
+            txtNome.Text = rows[0]["nome"].ToString();
+            txtCPF.Text = rows[0]["cpf"].ToString();
+            txtEmail.Text = rows[0]["email"].ToString();
+            txtCNHRegistro.Text = rows[0]["cnh_registro"].ToString();
+            txtCNHExpedicao.Text = Convert.ToDateTime(rows[0]["cnh_data_expedicao"]).ToString();
+            txtCNHPrimeiraHabilitacao.Text = Convert.ToDateTime(rows[0]["cnh_data_primeira_habilitacao"]).ToString();
+            txtCNHVencimento.Text = Convert.ToDateTime(rows[0]["cnh_vencimento"]).ToString();
+            cbCidade.SelectedItem = rows[0]["cidade"].ToString();
+            cbEstado.SelectedItem = rows[0]["estado"].ToString();
+            txtLogradouro.Text = rows[0]["logradouro"].ToString();
+            txtCEP.Text = rows[0]["cep"].ToString();
+            txtComplemento.Text = rows[0]["complemento"].ToString();
+            txtBairro.Text = rows[0]["bairro"].ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -52,10 +92,22 @@ namespace LocadoraCarrosDesktop
             conn.InsertItem("complemento", txtComplemento.Text);
             conn.InsertItem("bairro", txtBairro.Text);
 
-            conn.Insert("condutores");
+            string msg = "Erro";
 
-            MessageBox.Show("O condutor foi cadastrado com sucesso!");
-            
+            if (!this.update_mode)
+            {
+                conn.Insert("condutores");
+
+                msg = "O condutor foi cadastrado com sucesso!";
+            }
+            else
+            {
+                conn.Update("condutores", "id", this.id);
+
+                msg = "O condutor foi editado com sucesso!";
+            }
+
+            MessageBox.Show(msg);
             this.Close();
         }
 
@@ -102,7 +154,7 @@ namespace LocadoraCarrosDesktop
         private void cbEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
             var estado = cbEstado.SelectedValue.ToString();
-            
+
             theConn conn2 = new theConn();
 
             List<string> cb_cidades = new List<string>();

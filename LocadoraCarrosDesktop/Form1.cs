@@ -104,5 +104,11 @@ namespace LocadoraCarrosDesktop
             cadastrarForm.ShowDialog();
         }
 
+        private void cadastrarToolStripMenuItem2_Click_1(object sender, EventArgs e)
+        {
+            CadastrarCondutor form = new CadastrarCondutor();
+            form.ShowDialog();
+        }
+
     }
 }
