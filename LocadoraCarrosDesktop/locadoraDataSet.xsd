@@ -219,7 +219,7 @@ ON (tipo_pessoa.id = locatarios.tipo) </CommandText>
               <DbSource ConnectionRef="locadoraConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT veiculos.id as ID, veiculos.nome as Nome, veiculo_marcas.nome as Marca,placa as Placa, chassi as Chassi, cor as Cor, modelo as Modelo, ano as Ano, km as Kilometragem, combustivel.nome as Combustivel FROM veiculos JOIN veiculo_marcas ON (veiculos.marca_id = veiculo_marcas.id) JOIN combustivel ON (combustivel.id = veiculos.tipo_combustivel)</CommandText>
+                    <CommandText>SELECT veiculos.id as ID, veiculos.nome as Nome, veiculo_marcas.nome as Marca,placa as Placa, chassi as Chassi, cor as Cor, modelo as Modelo, ano as Ano, km as Kilometragem, combustivel.nome as Combustivel  FROM veiculos JOIN veiculo_marcas ON (veiculos.marca_id = veiculo_marcas.id) JOIN combustivel ON (combustivel.id = veiculos.tipo_combustivel)</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
