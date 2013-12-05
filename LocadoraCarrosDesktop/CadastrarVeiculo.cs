@@ -16,6 +16,7 @@ namespace LocadoraCarrosDesktop
         private bool update_mode = false;
         private string imagePath = null;
         private string privatePath = @"C:\Users\Gabriel\Documents\GitHub\LocadoraCarrosDesktop\LocadoraCarrosDesktop\Img\";
+        private string privatePathWeb = @"C:\Users\Gabriel\Documents\GitHub\LocadoraCarrosSite\LocadoraCarrosSite\Img\";
 
         public CadastrarVeiculo(string id = "vazio")
         {
@@ -84,7 +85,7 @@ namespace LocadoraCarrosDesktop
             txtKm.Text = rows[0]["km"].ToString();
             cbCombustivel.SelectedValue = rows[0]["tipo_combustivel"].ToString();
             cbMarca.SelectedValue = rows[0]["marca_id"].ToString();
-            pctCarro.Image = Image.FromFile(this.privatePath + rows[0]["imgfile"].ToString() + ".png");
+            pctCarro.Image = Image.FromFile(this.privatePath + rows[0]["imgfile"].ToString());
 
         }
         private void button1_Click(object sender, EventArgs e)
@@ -137,10 +138,11 @@ namespace LocadoraCarrosDesktop
             var newImage = this.ScaleImage(imagem, 217, 248);
             string imageName = this.GenerateId();
             newImage.Save(this.privatePath + imageName + ".png", System.Drawing.Imaging.ImageFormat.Png);
+            newImage.Save(this.privatePathWeb + imageName + ".png", System.Drawing.Imaging.ImageFormat.Png);
 
             pctCarro.Image = newImage;
 
-            this.imagePath = imageName;
+            this.imagePath = imageName + ".png";
         }
 
         //private void upload_photo(string fullPath, string sourcePath, string fileName)

@@ -132,7 +132,7 @@ namespace LocadoraCarrosDesktop
 
             string file = veiculoPhoto[0]["imgfile"].ToString();
 
-            string filename = file + ".png";
+            string filename = file;
 
             pctCarro.Image = Image.FromFile(this.privatePath + filename);
 
